@@ -1,0 +1,17 @@
+name: mFront Development Project
+startScript:
+  - git pull
+
+dependencies:
+  - name: Dependencies
+    dir: dependencies
+    status: active
+    clone:
+      branch: dev
+      repo:
+        - url: https://github.com/banglafighter/mmcore.git
+
+endScript:
+  - pnpm install
+
+
