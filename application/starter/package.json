@@ -1,0 +1,15 @@
+{
+  "name": "starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "mfront": "workspace:*"
+  },
+  "devDependencies": {
+    "vite-tsconfig-paths": "^6.0.5",
+    "vite": "^7.2.4"
+  }
+}

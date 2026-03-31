@@ -1,0 +1,41 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "useDefineForClassFields": true,
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": [
+      "vite/client",
+      "node"
+    ],
+    "skipLibCheck": true,
+    "strict": true,
+    "noUnusedLocals": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "mfront": [
+        "../../dependencies/mfront"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
