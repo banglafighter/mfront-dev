@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "mfront": [
+        "dependencies/ui/mfront"
+      ],
+      "@mfront/*": [
+        "dependencies/ui/*"
+      ]
+    }
+  }
+}
