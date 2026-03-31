@@ -11,6 +11,12 @@
       "mfront": [
         "dependencies/ui/mfront"
       ],
+      "mmcore": [
+        "dependencies/ui/mmcore"
+      ],
+      "mmcore-ui": [
+        "dependencies/ui/mmcore-ui"
+      ],
       "@mfront/*": [
         "dependencies/ui/*"
       ]
