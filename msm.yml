@@ -9,7 +9,13 @@ dependencies:
     clone:
       branch: dev
       repo:
+        - url: https://github.com/banglafighter/mfront.git
         - url: https://github.com/banglafighter/mmcore.git
+        - url: https://github.com/banglafighter/mmcore-ui.git
+        - url: https://github.com/banglafighter/mfront-libs-wrap.git
+        - url: https://github.com/banglafighter/mfront-ui.git
+        - url: https://github.com/banglafighter/mfront-default-ui.git
+        - url: https://github.com/banglafighter/mfront-cli.git
 
 endScript:
   - pnpm install
