@@ -2,6 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "mmcore",
+    "moduleResolution": "bundler",
     "lib": [
       "ES2022",
       "DOM",
@@ -10,16 +11,16 @@
     "baseUrl": ".",
     "paths": {
       "mfront": [
-        "dependencies/ui/mfront"
+        "dependencies/mfront"
       ],
       "mmcore": [
-        "dependencies/ui/mmcore"
+        "dependencies/mmcore"
       ],
       "mmcore-ui": [
-        "dependencies/ui/mmcore-ui"
+        "dependencies/mmcore-ui"
       ],
       "@mfront/*": [
-        "dependencies/ui/*"
+        "dependencies/*"
       ]
     }
   }
