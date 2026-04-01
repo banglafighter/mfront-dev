@@ -10,18 +10,13 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "mfront": [
-        "dependencies/mfront"
-      ],
-      "mmcore": [
-        "dependencies/mmcore"
-      ],
-      "mmcore-ui": [
-        "dependencies/mmcore-ui"
-      ],
-      "@mfront/*": [
-        "dependencies/*"
-      ]
+      "mfront": ["dependencies/mfront"],
+      "mmcore": ["dependencies/mmcore"],
+      "mmcore-ui": [ "dependencies/mmcore-ui" ],
+      "@mfront/core": ["dependencies/mfront-core"],
+      "@mfront/ui": ["dependencies/mfront-ui"],
+      "@mfront/default-ui": ["dependencies/mfront-default-ui"],
+      "@mfront/cli": ["dependencies/mfront-cli"],
     }
   }
 }
