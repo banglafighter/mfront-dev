@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
+    "jsxImportSource": "mmcore",
     "lib": [
       "ES2022",
       "DOM",
