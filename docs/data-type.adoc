@@ -1,0 +1,42 @@
+
+== UINode
+
+Anything mFront can display on the screen
+
+example:
+```typescript
+const a: UINode = "Hello";        // string
+const b: UINode = 123;            // number
+const c: UINode = <div />;        // JSX
+const d: UINode = null;           // empty
+const e: UINode = [<div />, "x"]; // array
+const f: UINode = <MyHeader title="Hello" />; // direct component
+```
+
+
+== UIComponent<P>
+Any function or class that accepts props `P`
+
+example:
+```typescript
+// Define component
+const MyHeader = ({ title }: { title: string }) => {
+  return <h1>{title}</h1>;
+};
+
+// Use
+type Props = {
+  Header: UIComponent<{ title: string }>;
+};
+
+const Page = ({ Header }: Props) => {
+  return (
+    <div>
+      <Header title="Hello World" />
+    </div>
+  );
+};
+
+// Pass component
+<Page Header={MyHeader} />
+```
