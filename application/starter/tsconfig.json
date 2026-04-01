@@ -13,7 +13,6 @@
     "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": true,
     "noEmit": true,
-    "jsx": "react-jsx",
     "types": [
       "vite/client",
       "node"
