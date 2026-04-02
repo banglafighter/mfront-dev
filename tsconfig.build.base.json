@@ -6,7 +6,6 @@
     "declarationMap": true,
     "sourceMap": true,
     "noEmit": false,
-    "baseUrl": ".",
     "paths": {}
   },
   "exclude": [
