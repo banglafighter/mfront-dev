@@ -1,6 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "mfront",
     "useDefineForClassFields": true,
     "target": "ES2022",
     "lib": [
@@ -21,13 +23,7 @@
     "strict": true,
     "noUnusedLocals": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
-    "paths": {
-      "mfront": [
-        "../../dependencies/mfront"
-      ]
-    }
+    "noUncheckedSideEffectImports": true
   },
   "include": [
     "src",

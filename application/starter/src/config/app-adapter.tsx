@@ -4,11 +4,13 @@ import {DefaultUIImplementation} from "@mfront/default-ui";
 
 export default class AppAdapter extends MAdapter {
     setCentralUI(): UINode {
-        return undefined;
+        return (
+            <></>
+        );
     }
 
     setSuspense(): UINode {
-        return undefined;
+        return (<div>Loading page...</div>)
     }
 
     setUIAdapter(): UIAdapterData {

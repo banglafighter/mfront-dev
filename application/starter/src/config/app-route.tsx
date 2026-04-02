@@ -1,22 +1,26 @@
 import {MRoute, type LayoutComponent, type PageComponent} from "mfront";
+import DefaultLayout from "../layout/default-layout";
+import PrivateLayout from "../layout/private-layout";
+import PublicLayout from "../layout/public-layout";
+import NotFoundPage from "../common/not-found-page";
 
 
 export default class AppRoute extends MRoute {
 
     setPublicLayout(): LayoutComponent {
-        throw new Error("Method not implemented.");
+        return PublicLayout
     }
 
     setPrivateLayout(): LayoutComponent {
-        throw new Error("Method not implemented.");
+        return PrivateLayout
     }
 
     setDefaultLayout(): LayoutComponent {
-        throw new Error("Method not implemented.");
+        return DefaultLayout
     }
 
     setNotFoundPage(): PageComponent {
-        throw new Error("Method not implemented.");
+        return NotFoundPage
     }
 
     registerRoute(mRoute: MRoute): void {
