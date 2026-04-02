@@ -6,7 +6,9 @@
     "dev": "vite"
   },
   "dependencies": {
-    "mfront": "workspace:*"
+    "mfront": "workspace:*",
+    "@mfront/ui": "workspace:*",
+    "@mfront/default-ui": "workspace:*"
   },
   "devDependencies": {
     "vite-tsconfig-paths": "^6.0.5",
