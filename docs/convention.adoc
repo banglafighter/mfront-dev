@@ -1,0 +1,10 @@
+
+== UI convention
+* xxx-page.tsx : Must add page extension if it direct access from url
+* xxx-dialog.tsx : If it open by dialog
+* xxx-view.tsx : Not directly open but common view which will share by others
+
+== Feature directory convention
+* Each feature should have its own directory under `src/features/`.
+* The directory should be named after the feature, e.g., `src/features/book/`.
+* Create file called `feature-name-ur.tsx` which means feature url and route.

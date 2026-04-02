@@ -2,7 +2,8 @@
   "name": "mfront-dev",
   "version": "0.0.1",
   "scripts": {
-    "setup-project": "node scripts/msm.js"
+    "setup-project": "node scripts/msm.js",
+    "start": "pnpm --filter starter run start"
   },
   "devDependencies": {
     "typescript": "^6.0.2",

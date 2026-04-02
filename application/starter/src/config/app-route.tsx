@@ -1,8 +1,9 @@
 import {MRoute, type LayoutComponent, type PageComponent} from "mfront";
-import DefaultLayout from "../layout/default-layout";
-import PrivateLayout from "../layout/private-layout";
-import PublicLayout from "../layout/public-layout";
+import DefaultLayout from "../layouts/default-layout";
+import PrivateLayout from "../layouts/private-layout";
+import PublicLayout from "../layouts/public-layout";
 import NotFoundPage from "../common/not-found-page";
+import BookUr from "../features/book/book-ur";
 
 
 export default class AppRoute extends MRoute {
@@ -23,8 +24,8 @@ export default class AppRoute extends MRoute {
         return NotFoundPage
     }
 
-    registerRoute(mRoute: MRoute): void {
-        throw new Error("Method not implemented.");
+    registerRoute(route: MRoute): void {
+        BookUr.registerRoute(route)
     }
 
 }

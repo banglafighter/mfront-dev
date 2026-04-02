@@ -1,5 +1,0 @@
-
-== UI convension
-* xxx-page.tsx : Must add page extension if it direct access from url
-* xxx-dialog.tsx : If it open by dialog
-* xxx-view.tsx : Not directly open but common view which will share by others

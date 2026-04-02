@@ -13,5 +13,4 @@ export default class AppRegistry implements MRegistry {
         this.config = new AppConfig()
         this.adapter = new AppAdapter()
     }
-
 }
