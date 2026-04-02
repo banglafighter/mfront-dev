@@ -7,11 +7,12 @@
   },
   "dependencies": {
     "mfront": "workspace:*",
-    "@mfront/ui": "workspace:*",
-    "@mfront/default-ui": "workspace:*"
+    "mfront-ui": "workspace:*",
+    "mfront-default-ui": "workspace:*"
   },
   "devDependencies": {
     "vite": "^8.0.3",
     "@vitejs/plugin-react": "^6.0.1"
-  }
+  },
+  "version": "0.0.1-alpha.0"
 }

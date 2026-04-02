@@ -17,16 +17,16 @@
       "mmcore-ui": [
         "dependencies/mmcore-ui"
       ],
-      "@mfront/core": [
+      "mfront-core": [
         "dependencies/mfront-core"
       ],
-      "@mfront/ui": [
+      "mfront-ui": [
         "dependencies/mfront-ui"
       ],
-      "@mfront/default-ui": [
+      "mfront-default-ui": [
         "dependencies/mfront-default-ui"
       ],
-      "@mfront/cli": [
+      "mfront-cli": [
         "dependencies/mfront-cli"
       ]
     }
