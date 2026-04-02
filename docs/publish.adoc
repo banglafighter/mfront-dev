@@ -4,3 +4,13 @@ pnpm release:alpha   # alpha preview
 pnpm release:beta    # beta preview
 pnpm release         # stable release
 ```
+
+```bash
+pnpm --filter mfront build
+pnpm --filter mfront version:alpha
+pnpm --filter mfront-core publish:alpha
+```
+
+```bash
+pnpm --filter mfront release:alpha
+```
