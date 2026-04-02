@@ -1,0 +1,6 @@
+
+```bash
+pnpm release:alpha   # alpha preview
+pnpm release:beta    # beta preview
+pnpm release         # stable release
+```
