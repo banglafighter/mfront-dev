@@ -1,0 +1,5 @@
+
+== Set Environment at runtime
+```bash
+vite --mode dev
+```

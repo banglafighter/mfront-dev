@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 export default defineConfig(({mode}) => {
-    const envFolder = path.resolve(__dirname, '../env')
+    const envFolder = path.resolve(__dirname, '../../env')
     const env = loadEnv(mode, envFolder, '')
 
     const defineEnv = Object.fromEntries(
