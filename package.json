@@ -18,7 +18,13 @@
     "release:beta": "pnpm build && pnpm version:beta && pnpm publish:beta",
     "release": "pnpm build && pnpm version:release && pnpm publish:release"
   },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
   "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "typescript": "^6.0.2",
     "@types/node": "^25.3.2",
     "tsdown": "^0.21.7",
