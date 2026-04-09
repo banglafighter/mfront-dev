@@ -7,7 +7,6 @@ export default function ExampleAllPage() {
                 toast({
                     message: "Bismillah Message",
                     type: "error",
-                    position: "bottomRight",
                     transition: "flip"
                 })
             }}>Show tost
