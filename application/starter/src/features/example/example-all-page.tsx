@@ -1,8 +1,11 @@
-import {toast} from "mfront-ui";
+import {Button, toast} from "mfront-ui";
 
 export default function ExampleAllPage() {
     return (
         <>
+            <Button type={"button"}>
+                Button
+            </Button>
             <button onClick={() => {
                 toast({
                     message: "Bismillah Message",
