@@ -53,23 +53,23 @@
     --primary: oklch(0.205 0 0);
     --primary-foreground: oklch(0.985 0 0);
 
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(55.75% 0.016 244.89);
+    --secondary-foreground: oklch(0.985 0 0);
 
     --muted: oklch(0.97 0 0);
     --muted-foreground: oklch(0.556 0 0);
 
-    --danger: oklch(0.97 0 0);
-    --danger-foreground: oklch(0.556 0 0);
+    --danger: oklch(59.15% 0.202 21.24);
+    --danger-foreground: oklch(0.985 0 0);
 
-    --warning: oklch(0.97 0 0);
-    --warning-foreground: oklch(0.556 0 0);
+    --warning: oklch(84.42% 0.172 84.93);
+    --warning-foreground: oklch(0.985 0 0);
 
-    --info: oklch(0.97 0 0);
-    --info-foreground: oklch(0.556 0 0);
+    --info: oklch(77.49% 0.138 218.05);
+    --info-foreground: oklch(0.985 0 0);
 
-    --success: oklch(0.97 0 0);
-    --success-foreground: oklch(0.556 0 0);
+    --success: oklch(55.20% 0.123 157.01);
+    --success-foreground: oklch(0.985 0 0);
 
     --accent: oklch(0.97 0 0);
     --accent-foreground: oklch(0.205 0 0);
@@ -93,23 +93,23 @@
     --primary: oklch(0.922 0 0);
     --primary-foreground: oklch(0.205 0 0);
 
-    --secondary: oklch(0.269 0 0);
+    --secondary: oklch(55.75% 0.016 244.89);
     --secondary-foreground: oklch(0.985 0 0);
 
     --muted: oklch(0.269 0 0);
     --muted-foreground: oklch(0.708 0 0);
 
-    --danger: oklch(0.97 0 0);
-    --danger-foreground: oklch(0.556 0 0);
+    --danger: oklch(59.15% 0.202 21.24);
+    --danger-foreground: oklch(0.985 0 0);
 
-    --warning: oklch(0.97 0 0);
-    --warning-foreground: oklch(0.556 0 0);
+    --warning: oklch(84.42% 0.172 84.93);
+    --warning-foreground: oklch(0.985 0 0);
 
-    --info: oklch(0.97 0 0);
-    --info-foreground: oklch(0.556 0 0);
+    --info: oklch(77.49% 0.138 218.05);
+    --info-foreground: oklch(0.985 0 0);
 
-    --success: oklch(0.97 0 0);
-    --success-foreground: oklch(0.556 0 0);
+    --success: oklch(55.20% 0.123 157.01);
+    --success-foreground: oklch(0.985 0 0);
 
     --accent: oklch(0.269 0 0);
     --accent-foreground: oklch(0.985 0 0);
