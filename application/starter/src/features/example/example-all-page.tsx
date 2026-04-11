@@ -1,4 +1,4 @@
-import {Button, Separator, toast} from "mfront-ui";
+import {Button, ButtonGroup, Separator, toast} from "mfront-ui";
 import {ArrowUpIcon, CircleFadingArrowUpIcon} from "lucide-react";
 
 export default function ExampleAllPage() {
@@ -37,6 +37,26 @@ export default function ExampleAllPage() {
                 </Button>
 
                 <Separator/>
+
+                <ButtonGroup>
+                    <Button variant="outline">Archive</Button>
+                    <Button variant="outline">Report</Button>
+                </ButtonGroup>
+
+                <ButtonGroup orientation={"vertical"}>
+                    <Button variant="outline">Archive</Button>
+                    <Button variant="outline">Report</Button>
+                </ButtonGroup>
+
+                <ButtonGroup orientation={"vertical"}>
+                    <Button variant="danger">Danger</Button>
+                    <Button variant="success">Success</Button>
+                </ButtonGroup>
+
+                <ButtonGroup orientation={"horizontal"}>
+                    <Button variant="danger">Danger</Button>
+                    <Button variant="success">Success</Button>
+                </ButtonGroup>
 
                 {/*<Button variant="outline">*/}
                 {/*    <Spinner data-icon="inline-start"/>*/}
