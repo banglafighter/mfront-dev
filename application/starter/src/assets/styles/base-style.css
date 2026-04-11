@@ -17,10 +17,10 @@
     --danger-foreground: oklch(0.985 0 0);
 
     --warning: oklch(84.42% 0.172 84.93);
-    --warning-foreground: oklch(0.985 0 0);
+    --warning-foreground: oklch(0.145 0 0);
 
     --info: oklch(77.49% 0.138 218.05);
-    --info-foreground: oklch(0.985 0 0);
+    --info-foreground: oklch(0.145 0 0);
 
     --success: oklch(55.20% 0.123 157.01);
     --success-foreground: oklch(0.985 0 0);
@@ -57,10 +57,10 @@
     --danger-foreground: oklch(0.985 0 0);
 
     --warning: oklch(84.42% 0.172 84.93);
-    --warning-foreground: oklch(0.985 0 0);
+    --warning-foreground: oklch(0.145 0 0);
 
     --info: oklch(77.49% 0.138 218.05);
-    --info-foreground: oklch(0.985 0 0);
+    --info-foreground: oklch(0.145 0 0);
 
     --success: oklch(55.20% 0.123 157.01);
     --success-foreground: oklch(0.985 0 0);
