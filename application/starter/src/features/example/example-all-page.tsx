@@ -1,4 +1,4 @@
-import {Button, toast} from "mfront-ui";
+import {Button, Separator, toast} from "mfront-ui";
 import {ArrowUpIcon, CircleFadingArrowUpIcon} from "lucide-react";
 
 export default function ExampleAllPage() {
@@ -35,6 +35,8 @@ export default function ExampleAllPage() {
                 <Button variant="danger" size="icon" className="rounded-full">
                     <ArrowUpIcon/>
                 </Button>
+
+                <Separator/>
 
                 {/*<Button variant="outline">*/}
                 {/*    <Spinner data-icon="inline-start"/>*/}
