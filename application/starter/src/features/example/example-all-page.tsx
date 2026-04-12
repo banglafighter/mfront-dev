@@ -1,5 +1,5 @@
-import {Button, ButtonGroup, Separator, toast} from "mfront-ui";
-import {ArrowUpIcon, CircleFadingArrowUpIcon} from "lucide-react";
+import {Button, ButtonGroup, Loader, Separator, toast} from "mfront-ui";
+import {ArrowUpIcon, Loader as LoaderIcon, CircleFadingArrowUpIcon, LoaderPinwheel, Move, RefreshCcw} from "lucide-react";
 
 export default function ExampleAllPage() {
     return (
@@ -58,10 +58,18 @@ export default function ExampleAllPage() {
                     <Button variant="success">Success</Button>
                 </ButtonGroup>
 
-                {/*<Button variant="outline">*/}
-                {/*    <Spinner data-icon="inline-start"/>*/}
-                {/*    Generating*/}
-                {/*</Button>*/}
+                <Button variant="outline">
+                    <Loader size={"default"} />
+                    Generating
+                </Button>
+
+                <Loader size={"xs"} speed={.5} icon={Move}/>
+                <Loader size={"sm"} speed={1} icon={LoaderIcon}/>
+                <Loader size={"default"} speed={2} icon={LoaderPinwheel}/>
+                <Loader size={"md"} speed={3} icon={RefreshCcw}/>
+                <Loader size={"lg"} speed={4} icon={LoaderPinwheel}/>
+                <Loader size={"xl"} speed={5} icon={LoaderPinwheel}/>
+                <Loader size={"xxl"} speed={5} icon={LoaderIcon}/>
 
 
                 <Button onClick={() => {
