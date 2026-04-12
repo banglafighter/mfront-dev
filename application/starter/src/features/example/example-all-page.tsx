@@ -1,9 +1,44 @@
-import {Button, ButtonGroup, Loader, Separator, toast} from "mfront-ui";
+import {
+    Button,
+    ButtonGroup,
+    Card,
+    CardAction, CardBody, CardFooter,
+    CardHeader,
+    CardSubTitle,
+    CardTitle,
+    Loader,
+    Separator,
+    toast
+} from "mfront-ui";
 import {ArrowUpIcon, Loader as LoaderIcon, CircleFadingArrowUpIcon, LoaderPinwheel, Move, RefreshCcw} from "lucide-react";
+
+function BasicCard() {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+                <CardSubTitle>Card Sub Title</CardSubTitle>
+                <CardAction>Card Action</CardAction>
+            </CardHeader>
+            <CardBody>
+                <p>Card Body</p>
+            </CardBody>
+            <CardFooter>
+                <p>Card Footer</p>
+            </CardFooter>
+        </Card>
+    )
+}
 
 export default function ExampleAllPage() {
     return (
         <div className={"m-4"}>
+
+            <BasicCard/>
+
+            <Separator className={"mt-5 mb-5"}/>
+
+
             <div className="flex flex-wrap items-center gap-2 md:flex-row">
 
                 <Button variant="primary">Primary</Button>
@@ -66,10 +101,10 @@ export default function ExampleAllPage() {
                 <Loader size={"xs"} speed={.5} icon={Move}/>
                 <Loader size={"sm"} speed={1} icon={LoaderIcon}/>
                 <Loader size={"default"} speed={2} icon={LoaderPinwheel}/>
-                <Loader size={"md"} speed={3} icon={RefreshCcw}/>
-                <Loader size={"lg"} speed={4} icon={LoaderPinwheel}/>
+                <Loader size={"md"} speed={3} icon={RefreshCcw} direction={"alternate"}/>
+                <Loader size={"lg"} speed={4} icon={LoaderPinwheel} direction={"reverse"}/>
                 <Loader size={"xl"} speed={5} icon={LoaderPinwheel}/>
-                <Loader size={"xxl"} speed={5} icon={LoaderIcon}/>
+                <Loader size={"xxl"} speed={5} icon={LoaderIcon} direction={"reverse"}/>
 
 
                 <Button onClick={() => {
