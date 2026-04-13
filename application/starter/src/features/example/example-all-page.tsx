@@ -11,6 +11,7 @@ import {
     toast
 } from "mfront-ui";
 import {ArrowUpIcon, Loader as LoaderIcon, CircleFadingArrowUpIcon, LoaderPinwheel, Move, RefreshCcw} from "lucide-react";
+import GridSystemRawView from "./grid-system-raw-view";
 
 function BasicCard() {
     return (
@@ -33,6 +34,8 @@ function BasicCard() {
 export default function ExampleAllPage() {
     return (
         <div className={"m-4"}>
+
+            <GridSystemRawView/>
 
             <BasicCard/>
 
