@@ -11,7 +11,6 @@ import {
     toast
 } from "mfront-ui";
 import {ArrowUpIcon, Loader as LoaderIcon, CircleFadingArrowUpIcon, LoaderPinwheel, Move, RefreshCcw} from "lucide-react";
-import GridSystemRawView from "./grid-system-raw-view";
 
 function BasicCard() {
     return (
@@ -34,14 +33,8 @@ function BasicCard() {
 export default function ExampleAllPage() {
     return (
         <div className={"m-4"}>
-
-            <GridSystemRawView/>
-
             <BasicCard/>
-
             <Separator className={"mt-5 mb-5"}/>
-
-
             <div className="flex flex-wrap items-center gap-2 md:flex-row">
 
                 <Button variant="primary">Primary</Button>

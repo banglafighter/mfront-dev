@@ -1,3 +1,5 @@
+import {Grid, GridItem, Separator} from "mfront-ui";
+
 export function GridAlignmentDemo() {
   return (
     <div className="space-y-10 p-6">
@@ -49,41 +51,108 @@ export function GridAlignmentDemo() {
 
 export default function ExampleGridPage() {
     return (
-        <>
+        <div className={"m-4"}>
+            <h2 className="mb-2 font-bold">Basic Grid</h2>
+            <Grid gap={2} flow={"column"}>
+                <GridItem className={"bg-red-100 h-9"}>1</GridItem>
+                <GridItem className={"bg-red-200 h-9"}>2</GridItem>
+                <GridItem className={"bg-red-300 h-9"}>3</GridItem>
+                <GridItem className={"bg-red-400 h-9"}>4</GridItem>
+                <GridItem className={"bg-red-500 h-9"}>5</GridItem>
+                <GridItem className={"bg-red-600 h-9"}>6</GridItem>
+                <GridItem className={"bg-red-700 h-9"}>7</GridItem>
+                <GridItem className={"bg-red-800 h-9"}>8</GridItem>
+            </Grid>
+            <Separator className={"mt-5 mb-5"}/>
 
-            <div className="space-y-10 p-6">
-                <div className={"h-100 border bg-green-100 grid grid-cols-[repeat(5,80px)] gap-2 justify-end items-end"}>
-                    <div className="bg-red-100 h-20">1</div>
-                    <div className="bg-red-200 h-20">2</div>
-                    <div className="bg-red-300 h-20">3</div>
-                    <div className="bg-red-400 h-20">4</div>
-                    <div className="bg-red-500 h-20">5</div>
-                    <div className="bg-red-600 h-20">6</div>
-                    <div className="bg-red-700 h-20">7</div>
-                    <div className="bg-red-800 h-20">8</div>
-                    <div className="bg-red-900 h-20">9</div>
-                    <div className="bg-green-900 h-20">10</div>
-                    <div className="bg-green-800 h-20">11</div>
-                    <div className="bg-green-700 h-20">12</div>
-                </div>
-            </div>
+            <h2 className="mb-2 font-bold">Grid Column</h2>
+            <Grid gap={1} cols={12}>
+                <GridItem colSpan={3} className={"bg-red-100 h-9"}>Cols Span 3 of 12</GridItem>
+                <GridItem colSpan={5} className={"bg-red-200 h-9"}>Cols Span 5 of 12</GridItem>
+                <GridItem colSpan={4} className={"bg-red-300 h-9"}>Cols Span 4 of 12</GridItem>
+                <GridItem colSpan={8} className={"bg-red-400 h-9"}>Cols Span 8 of 12</GridItem>
+                <GridItem colSpan={2} className={"bg-red-500 h-9"}>Cols Span 2 of 12</GridItem>
+                <GridItem colSpan={2} className={"bg-red-600 h-9"}>Cols Span 2 of 12</GridItem>
+                <GridItem colSpan={6} className={"bg-red-700 h-9"}>Cols Span 6 of 12</GridItem>
+                <GridItem colSpan={6} className={"bg-red-800 h-9"}>Cols Span 6 of 12</GridItem>
+            </Grid>
+            <Separator className={"mt-5 mb-5"}/>
 
-            {/*<GridAlignmentDemo/>*/}
+            <h2 className="mb-2 font-bold">Grid Row & Column</h2>
+            <Grid rows={2} cols={4} gap={2}>
+                <GridItem rowSpan={2} className={"bg-red-100 p-2"}>Row Span 2 (1)</GridItem>
+                <GridItem className={"bg-red-200 p-2"}>2</GridItem>
+                <GridItem rowSpan={2} className={"bg-red-300 p-2"}>Row Span 2 (3)</GridItem>
+                <GridItem className={"bg-red-400 p-2"}>4</GridItem>
+                <GridItem rowSpan={2} className={"bg-red-500 p-2"}>Row Span 2 (5)</GridItem>
+                <GridItem rowSpan={2} className={"bg-red-600 p-2"}>Row Span 2 (6)</GridItem>
+                <GridItem className={"bg-red-700 p-2"}>7</GridItem>
+                <GridItem className={"bg-red-800 p-2"}>8</GridItem>
+                <GridItem className={"bg-red-900 p-2"}>9</GridItem>
+                <GridItem colSpan={3} className="bg-green-900 p-2">Column Span 3 (10)</GridItem>
+                <GridItem colSpan={3} className="bg-green-800 p-2">Column Span 3 (11)</GridItem>
+                <GridItem className="bg-green-700 p-2">12</GridItem>
+                <GridItem className="bg-green-600 p-2">13</GridItem>
+                <GridItem colSpan={3} className="bg-green-500 p-2">Column Span 3 (14)</GridItem>
+                <GridItem className="bg-green-400 p-2">15</GridItem>
+                <GridItem className="bg-green-300 p-2">16</GridItem>
+                <GridItem className="bg-green-200 p-2">17</GridItem>
+                <GridItem className="bg-green-100 p-2">18</GridItem>
+            </Grid>
+            <Separator className={"mt-5 mb-5"}/>
 
-            {/*<div className={"grid gap-2 h-64 grid-cols-5"}>*/}
-            {/*    <div className="bg-red-100 p-6">1</div>*/}
-            {/*    <div className="bg-red-200 p-6">2</div>*/}
-            {/*    <div className="bg-red-300 p-6">3</div>*/}
-            {/*    <div className="bg-red-400 p-6">4</div>*/}
-            {/*    <div className="bg-red-500 p-6">5</div>*/}
-            {/*    <div className="bg-red-600 p-6">6</div>*/}
-            {/*    <div className="bg-red-700 p-6">7</div>*/}
-            {/*    <div className="bg-red-800 p-6">8</div>*/}
-            {/*    <div className="bg-red-900 p-6">9</div>*/}
-            {/*    <div className="bg-green-900 p-6">10</div>*/}
-            {/*    <div className="bg-green-800 p-6">11</div>*/}
-            {/*    <div className="bg-green-700 p-6">12</div>*/}
-            {/*</div>*/}
-        </>
+            <h2 className="mb-2 font-bold">Random 1</h2>
+            <Grid cols={6} rows={3} gap={2}>
+                <GridItem rowSpan={4} className={"bg-blue-100 p-2"}>1</GridItem>
+                <GridItem className={"bg-blue-200 p-2"}>2</GridItem>
+                <GridItem rowSpan={4} className={"bg-blue-300 p-2"}>3</GridItem>
+                <GridItem className={"bg-blue-400 p-2"}>4</GridItem>
+                <GridItem rowSpan={4} className={"bg-blue-500 p-2"}>5</GridItem>
+                <GridItem className={"bg-blue-600 p-2"}>6</GridItem>
+                <GridItem className={"bg-blue-700 p-2"}>7</GridItem>
+                <GridItem className={"bg-blue-800 p-2"}>8</GridItem>
+                <GridItem className={"bg-blue-900 p-2"}>9</GridItem>
+                <GridItem className={"bg-yellow-900 p-2"}>10</GridItem>
+                <GridItem className={"bg-yellow-800 p-2"}>11</GridItem>
+                <GridItem className={"bg-yellow-700 p-2"}>12</GridItem>
+                <GridItem className={"bg-yellow-600 p-2"}>13</GridItem>
+                <GridItem className={"bg-yellow-500 p-2"}>14</GridItem>
+                <GridItem className={"bg-yellow-400 p-2"}>15</GridItem>
+            </Grid>
+            <Separator className={"mt-5 mb-5"}/>
+
+
+            <h2 className="mb-2 font-bold">Random 2</h2>
+            <Grid cols={6} rows={3} gap={2}>
+                <GridItem rowSpan={4} colSpan={2} className={"bg-blue-100 p-2"}>1</GridItem>
+                <GridItem className={"bg-blue-200 p-2"}>2</GridItem>
+                <GridItem rowSpan={4} colSpan={2} className={"bg-blue-300 p-2"}>3</GridItem>
+                <GridItem className={"bg-blue-400 p-2"}>4</GridItem>
+                <GridItem rowSpan={4} className={"bg-blue-500 p-2"}>5</GridItem>
+                <GridItem rowSpan={3} className={"bg-blue-600 p-2"}>6</GridItem>
+                <GridItem className={"bg-blue-700 p-2"}>7</GridItem>
+                <GridItem className={"bg-blue-800 p-2"}>8</GridItem>
+                <GridItem className={"bg-blue-900 p-2"}>9</GridItem>
+                <GridItem className={"bg-yellow-900 p-2"}>10</GridItem>
+                <GridItem className={"bg-yellow-800 p-2"}>11</GridItem>
+                <GridItem className={"bg-yellow-700 p-2"}>12</GridItem>
+                <GridItem className={"bg-yellow-600 p-2"}>13</GridItem>
+                <GridItem className={"bg-yellow-500 p-2"}>14</GridItem>
+                <GridItem colSpan={3} className={"bg-yellow-400 p-2"}>15</GridItem>
+            </Grid>
+            <Separator className={"mt-5 mb-5"}/>
+
+            <h2 className="mb-2 font-bold">xxxxxxxxx</h2>
+            <Separator className={"mt-5 mb-5"}/>
+
+
+            <h2 className="mb-2 font-bold">xxxxxxxxx</h2>
+            <Separator className={"mt-5 mb-5"}/>
+
+            <h2 className="mb-2 font-bold">xxxxxxxxx</h2>
+            <Separator className={"mt-5 mb-5"}/>
+
+
+        </div>
     )
 }
