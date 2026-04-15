@@ -1,54 +1,5 @@
 import {Grid, GridItem, Separator} from "mfront-ui";
 
-export function GridAlignmentDemo() {
-  return (
-    <div className="space-y-10 p-6">
-
-      {/* 1️⃣ GRID ITSELF ALIGNMENT */}
-      <div className="border p-4">
-        <h2 className="mb-2 font-bold">1. Grid inside parent (mx-auto)</h2>
-
-        <div className="w-full h-40 border bg-gray-100">
-          <div className="grid grid-cols-[repeat(5,80px)] gap-2 w-fit mx-auto bg-yellow-100">
-            {[...Array(10)].map((_, i) => (
-              <div key={i} className="bg-red-400 p-2 text-center">
-                {i + 1}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 2️⃣ GRID TRACK ALIGNMENT */}
-      <div className="border p-4">
-        <h2 className="mb-2 font-bold">2. justify-center (tracks inside grid)</h2>
-
-        <div className="grid grid-cols-[repeat(5,80px)] gap-2 h-40 border justify-center bg-blue-100">
-          {[...Array(10)].map((_, i) => (
-            <div key={i} className="bg-blue-400 p-2 text-center">
-              {i + 1}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 3️⃣ ITEM ALIGNMENT */}
-      <div className="border p-4">
-        <h2 className="mb-2 font-bold">3. justify-items-center (inside each cell)</h2>
-
-        <div className="grid grid-cols-5 gap-2 h-40 border justify-items-center items-center bg-green-100">
-          {[...Array(10)].map((_, i) => (
-            <div key={i} className="bg-green-500 p-2 w-10 text-center">
-              {i + 1}
-            </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
-  );
-}
-
 export default function ExampleGridPage() {
     return (
         <div className={"m-4"}>
