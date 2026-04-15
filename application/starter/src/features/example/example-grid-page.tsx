@@ -142,17 +142,54 @@ export default function ExampleGridPage() {
             </Grid>
             <Separator className={"mt-5 mb-5"}/>
 
-            <h2 className="mb-2 font-bold">xxxxxxxxx</h2>
+            <h2 className="mb-2 font-bold">Grid Column Start End</h2>
+            <Grid gap={2} cols={6}>
+                <GridItem colStart={2} colSpan={4} className={"bg-blue-700 p-2"}>1</GridItem>
+                <GridItem colStart={1} colEnd={3} className={"bg-blue-800 p-2"}>2</GridItem>
+                <GridItem colSpan={2} colEnd={7} className={"bg-blue-900 p-2"}>3</GridItem>
+                <GridItem colStart={1} colEnd={7} className={"bg-yellow-900 p-2"}>4</GridItem>
+            </Grid>
             <Separator className={"mt-5 mb-5"}/>
 
 
-            <h2 className="mb-2 font-bold">xxxxxxxxx</h2>
+            <h2 className="mb-2 font-bold">Grid Column Start End 2</h2>
+            <Grid gap={2} cols={5}>
+                <GridItem colStart={2} colEnd={5} className={"bg-blue-700 p-2"}>1</GridItem>
+                <GridItem colStart={1} className={"bg-blue-800 p-2"}>2</GridItem>
+                <GridItem colStart={3} className={"bg-blue-900 p-2"}>3</GridItem>
+                <GridItem colStart={5} className={"bg-yellow-900 p-2"}>4</GridItem>
+                <GridItem colStart={1} colEnd={3} className={"bg-yellow-800 p-2"}>5</GridItem>
+                <GridItem colStart={4} colEnd={6} className={"bg-yellow-700 p-2"}>6</GridItem>
+                <GridItem colStart={2} colEnd={5} className={"bg-yellow-600 p-2"}>7</GridItem>
+                <GridItem colSpan={5} className={"bg-yellow-500 p-2"}>8</GridItem>
+            </Grid>
             <Separator className={"mt-5 mb-5"}/>
 
-            <h2 className="mb-2 font-bold">xxxxxxxxx</h2>
+            <h2 className="mb-2 font-bold">Grid Row Start End</h2>
+            <Grid gap={4} rows={3} flow={"column"}>
+                <GridItem rowStart={2} rowSpan={2} className={"bg-blue-800 p-2"}>1</GridItem>
+                <GridItem rowEnd={3} rowSpan={2} className={"bg-blue-800 p-2"}>2</GridItem>
+                <GridItem rowStart={1} rowEnd={4} className={"bg-blue-800 p-2"}>3</GridItem>
+            </Grid>
             <Separator className={"mt-5 mb-5"}/>
 
-
+            <h2 className="mb-2 font-bold">Grid Responsive</h2>
+            <Grid gap={2} cols={4}>
+                <GridItem className={"bg-yellow-500 p-2"}>1</GridItem>
+                <GridItem className={"bg-yellow-500 p-2"}>2</GridItem>
+                <GridItem className={"bg-yellow-500 p-2"}>3</GridItem>
+                <GridItem className={"bg-yellow-500 p-2"}>4</GridItem>
+                <GridItem
+                    colSpan={3}
+                    colSpanMob={4}
+                    colSpanTab={2}
+                    colSpanLarge={3}
+                    className={"bg-blue-300 p-2"}>
+                    Responsive
+                </GridItem>
+            </Grid>
+            <Separator className={"mt-5 mb-5"}/>
+            
         </div>
     )
 }
