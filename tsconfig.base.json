@@ -28,6 +28,9 @@
       ],
       "mfront-cli": [
         "dependencies/mfront-cli"
+      ],
+      "mfront-ui-exp": [
+        "dependencies/mfront-ui-exp"
       ]
     }
   }

@@ -6,6 +6,7 @@ import NotFoundPage from "../common/not-found-page";
 import BookUr from "../features/book/book-ur";
 import LandingUr from "../features/landing/landing-ur";
 import ExampleUr from "../features/example/example-ur";
+import {InputExpUr} from "mfront-ui-exp";
 
 
 export default class AppRoute extends MRoute {
@@ -30,6 +31,7 @@ export default class AppRoute extends MRoute {
         BookUr.registerRoute(route)
         LandingUr.registerRoute(route)
         ExampleUr.registerRoute(route)
+        InputExpUr.registerRoute(route)
     }
 
 }
