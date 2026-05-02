@@ -1,4 +1,4 @@
-import {Input, InputFrame} from "mfront-ui";
+import {Input, InputField, InputFrame} from "mfront-ui";
 
 export default function ExampleInputAndFormPage() {
     return (
@@ -18,6 +18,15 @@ export default function ExampleInputAndFormPage() {
                 element={(labelKey: string) => (
                     <Input id={labelKey} type={"text"}/>
                 )}
+            />
+
+            <InputField
+                label={"Last Name"}
+                className={"mt-4"}
+                required={true}
+                isError={true}
+                errorText={"Please enter your last name"}
+                type={"text"}
             />
 
 
