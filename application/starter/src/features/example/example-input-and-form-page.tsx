@@ -26,6 +26,7 @@ export default function ExampleInputAndFormPage() {
                 required={true}
                 isError={true}
                 errorText={"Please enter your last name"}
+                placeholder={"Last Name"}
                 type={"text"}
             />
 
