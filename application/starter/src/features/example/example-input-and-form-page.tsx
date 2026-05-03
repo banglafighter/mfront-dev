@@ -5,7 +5,7 @@ export default function ExampleInputAndFormPage() {
         <div className={"m-4"}>
             <InputFrame
                 label={"Input with label"}
-                 labelNext={"Forgot Password?"}
+                labelNext={"Forgot Password?"}
                 required={true}
                 element={(labelKey: string) => ("All Input Here, some other text, long text")}
             />
@@ -15,6 +15,7 @@ export default function ExampleInputAndFormPage() {
                 className={"mt-4"}
                 required={true}
                 hintsText={"Please enter your first name"}
+                labelNext={"Forgot Password?"}
                 element={(labelKey: string) => (
                     <Input id={labelKey} type={"text"}/>
                 )}
