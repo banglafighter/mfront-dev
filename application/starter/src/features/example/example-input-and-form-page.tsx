@@ -9,7 +9,7 @@ import {
     Grid,
     Input,
     InputField,
-    InputFrame, useFieldEngine
+    InputFrame, Textarea, useFieldEngine
 } from "mfront-ui";
 import FieldGeneratorInputView from "./input/field-generator-input-view";
 
@@ -36,6 +36,16 @@ export default function ExampleInputAndFormPage() {
                 labelNext={"Forgot Password?"}
                 element={(labelKey: string) => (
                     <Input id={labelKey} type={"text"} name={"firstName"}/>
+                )}
+            />
+
+            <InputFrame
+                label={"Address"}
+                className={"mt-4"}
+                required={true}
+                errorText={"Please enter address"}
+                element={(labelKey: string) => (
+                    <Textarea id={labelKey} name={"address"}/>
                 )}
             />
 

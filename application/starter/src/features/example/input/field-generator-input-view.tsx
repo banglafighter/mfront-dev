@@ -17,7 +17,7 @@ export default function FieldGeneratorInputView() {
         spec.text({name: "name", label: "Name", required: true, colSpan: 4, errorText: "Please enter your name"})
         spec.text({name: "fatherName", label: "Father name", colSpan: 4})
         spec.text({name: "motherName", label: "Mother name", required: true, colSpan: 4, errorText: "Please enter your mother name"})
-
+        spec.textarea({name: "address", label: "Address", colSpan: 12})
         return spec
     })
 
