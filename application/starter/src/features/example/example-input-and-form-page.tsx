@@ -5,13 +5,14 @@ import {
     CardFooter,
     CardHeader,
     CardSubTitle,
-    CardTitle,
+    CardTitle, FieldGroup,
     Grid,
     Input,
     InputField,
     InputFrame, Textarea, useFieldEngine
 } from "mfront-ui";
 import FieldGeneratorInputView from "./input/field-generator-input-view";
+import {CopyIcon, Eye, FileCodeIcon} from "lucide-react";
 
 export default function ExampleInputAndFormPage() {
     const engine = useFieldEngine()
@@ -19,6 +20,40 @@ export default function ExampleInputAndFormPage() {
         <div className={"m-4"}>
 
             <FieldGeneratorInputView/>
+
+            <FieldGroup
+                className={"mt-4 mb-4"}
+                groupType={"text"}
+                name={"fieldGroup"}
+                label={"URL"}
+                startOrTopItems={
+                    [{itemType: "text", content: "https://"}]
+                }
+            />
+
+            <FieldGroup
+                className={"mt-4 mb-4"}
+                groupType={"text"}
+                name={"password"}
+                label={"Password"}
+                endOrButtonItems={
+                    [{itemType: "node", content: <Eye/>}]
+                }
+            />
+
+            <FieldGroup
+                className={"mt-4 mb-4"}
+                groupType={"textarea"}
+                name={"script"}
+                label={"Script"}
+                startOrTopItems={
+                    [
+                        {itemType: "node", content: <FileCodeIcon className="text-muted-foreground"/>},
+                        {itemType: "text", content: "script.js"},
+                        {itemType: "node", content: (<div className={"ml-auto flex gap-1"}><Button variant={"ghost"} size={"iconSm"}><CopyIcon/></Button></div>)}
+                    ]
+                }
+            />
 
 
             <InputFrame
