@@ -16,8 +16,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2",
-    "typescript": "~6.0.2",
-    "vite-tsconfig-paths": "^6.1.1"
+    "typescript": "~6.0.2"
   },
   "version": "0.0.1-alpha.1"
 }
