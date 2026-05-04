@@ -11,11 +11,16 @@ import {
     InputField,
     InputFrame, useFieldEngine
 } from "mfront-ui";
+import FieldGeneratorInputView from "./input/field-generator-input-view";
 
 export default function ExampleInputAndFormPage() {
     const engine = useFieldEngine()
     return (
         <div className={"m-4"}>
+
+            <FieldGeneratorInputView/>
+
+
             <InputFrame
                 label={"Input with label"}
                 labelNext={"Forgot Password?"}
