@@ -9,10 +9,11 @@ import {
     Grid,
     Input,
     InputField,
-    InputFrame
+    InputFrame, useFieldEngine
 } from "mfront-ui";
 
 export default function ExampleInputAndFormPage() {
+    const engine = useFieldEngine()
     return (
         <div className={"m-4"}>
             <InputFrame
@@ -51,15 +52,15 @@ export default function ExampleInputAndFormPage() {
                 </CardHeader>
                 <CardBody>
                     <Grid cols={12} gap={3}>
-                        <InputField name={"firstName"} type={"text"} label={"First Name"} colSpan={6} required={true}/>
-                        <InputField name={"lastName"} type={"text"} label={"Last Name"} colSpan={6}/>
-                        <InputField name={"email"} type={"text"} label={"Email"} colSpan={6} required={true}/>
-                        <InputField name={"password"} type={"text"} label={"Password"} colSpan={6} required={true}/>
+                        <InputField name={"firstName"} type={"text"} label={"First Name"} colSpan={6} required={true} engine={engine}/>
+                        <InputField name={"lastName"} type={"text"} label={"Last Name"} colSpan={6} engine={engine}/>
+                        <InputField name={"email"} type={"text"} label={"Email"} colSpan={6} required={true} engine={engine}/>
+                        <InputField name={"password"} type={"text"} label={"Password"} colSpan={6} required={true} engine={engine}/>
                     </Grid>
                 </CardBody>
                 <CardFooter className={"flex justify-end gap-2"}>
                     <Button variant={"outline"}>Cancel</Button>
-                    <Button variant={"primary"}>Submit</Button>
+                    <Button variant={"primary"} onClick={()=>{console.log(engine.getFieldValues())}}>Submit</Button>
                 </CardFooter>
             </Card>
 
