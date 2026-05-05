@@ -9,13 +9,13 @@ import {
     useFieldEngine
 } from "mfront-ui";
 import {type WebFieldGroupProps, WebFieldSpec} from "mmcore-ui";
-import {Eye, EyeOff} from "lucide-react";
+import {AtSign, Eye, EyeOff} from "lucide-react";
 import {type UINode, useRef} from "mfront";
 
 
 export default function FieldGeneratorInputView() {
     const engine = useFieldEngine()
-    const hidePassword = useRef(true)
+    const hidePassword = useRef(false)
 
     const togglePassword = () => {
         let spec = engine.getSpec<WebFieldGroupProps>("password")
@@ -30,7 +30,7 @@ export default function FieldGeneratorInputView() {
             spec.type = "password"
             hidePassword.current = true
         }
-        spec.endOrButtonItems = getPasswordIcon()
+        spec.endOrBottomItems = getPasswordIcon()
         engine.updateInputFieldSpec(spec, true)
     }
 
@@ -52,14 +52,43 @@ export default function FieldGeneratorInputView() {
             colSpan: 4,
             errorText: "Please enter your mother name",
         })
-        spec.password({
+
+        spec.text({
             name: "password",
-            label: "Password",
+            label: "Custom Password",
             required: true,
             colSpan: 4,
             errorText: "Please enter your password",
-            endOrButtonItems: getPasswordIcon()
+            endOrBottomItems: getPasswordIcon()
         })
+
+        spec.email({
+            name: "email",
+            label: "Email Address",
+            required: true,
+            colSpan: 4,
+            errorText: "Please enter your email",
+            startOrTopItems: [
+                {itemType: "node", content: <AtSign/>},
+            ]
+        })
+
+        spec.password({
+            name: "systemPassword",
+            label: "System Password",
+            required: true,
+            colSpan: 4,
+            errorText: "Please enter your password",
+        })
+
+        spec.text({
+            name: "website",
+            label: "Website",
+            colSpan: 4,
+            startOrTopItems: [{itemType: "text", content: "https://www."}],
+            endOrBottomItems: [{itemType: "text", content: ".com"}]
+        })
+
         spec.textarea({name: "address", label: "Address", colSpan: 12})
         return spec
     })

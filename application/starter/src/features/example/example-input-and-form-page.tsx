@@ -36,7 +36,7 @@ export default function ExampleInputAndFormPage() {
                 groupType={"text"}
                 name={"password"}
                 label={"Password"}
-                endOrButtonItems={
+                endOrBottomItems={
                     [{itemType: "node", content: <Eye/>}]
                 }
             />
