@@ -1,2 +1,5 @@
 
 pnpm store prune
+
+
+for /d /r . %d in (node_modules) do @if exist "%d" rmdir /s /q "%d"
