@@ -9,15 +9,47 @@ import {
     Grid,
     Input,
     InputField,
-    InputFrame, Textarea, useFieldEngine
+    InputFrame, SelectField, Textarea, useFieldEngine
 } from "mfront-ui";
 import FieldGeneratorInputView from "./input/field-generator-input-view";
 import {CopyIcon, Eye, FileCodeIcon} from "lucide-react";
+
+export const countryOptions = [
+    {label: "Bangladesh", value: "BD"},
+    {label: "Pakistan", value: "PK"},
+    {label: "India", value: "IN"},
+    {label: "United States", value: "US"},
+    {label: "United Kingdom", value: "GB"},
+    {label: "Canada", value: "CA"},
+    {label: "Australia", value: "AU"},
+    {label: "Germany", value: "DE"},
+    {label: "France", value: "FR"},
+    {label: "Japan", value: "JP"},
+    {label: "China", value: "CN"},
+    {label: "South Korea", value: "KR"},
+    {label: "Turkey", value: "TR"},
+    {label: "Russia", value: "RU"},
+    {label: "Saudi Arabia", value: "SA"},
+    {label: "United Arab Emirates", value: "AE"},
+];
 
 export default function ExampleInputAndFormPage() {
     const engine = useFieldEngine()
     return (
         <div className={"m-4"}>
+
+
+            <div className={"mt-4"}>
+                <SelectField
+                    options={countryOptions}
+                    labelKey={"label"}
+                    valueKey={"value"}
+                    name={"country"}
+                    label={"Country"}
+                    required={true}
+                    engine={engine}
+                />
+            </div>
 
             <FieldGeneratorInputView/>
 
@@ -113,6 +145,8 @@ export default function ExampleInputAndFormPage() {
                     <Button variant={"primary"} onClick={()=>{console.log(engine.getFieldValues())}}>Submit</Button>
                 </CardFooter>
             </Card>
+
+
 
 
 

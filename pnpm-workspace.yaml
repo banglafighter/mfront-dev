@@ -1,3 +1,11 @@
 packages:
   - application/*
   - dependencies/*
+
+publicHoistPattern:
+  - "@base-ui/*"
+  - "@floating-ui/*"
+  - "use-sync-external-store"
+  - "reselect"
+
+autoInstallPeers: true
