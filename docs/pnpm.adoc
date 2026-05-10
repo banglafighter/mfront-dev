@@ -6,3 +6,5 @@ pnpm clean
 del /f /q pnpm-lock.yaml
 for /d /r . %d in (node_modules) do @if exist "%d" rmdir /s /q "%d"
 pnpm install
+
+pnpm clean && pnpm install && pnpm start

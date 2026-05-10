@@ -7,5 +7,16 @@ publicHoistPattern:
   - "@floating-ui/*"
   - "use-sync-external-store"
   - "reselect"
+  - "@radix-ui/*"
+  - "aria-hidden"
+  - "react-remove-scroll"
+  - "tslib"
+  - "use-sidecar"
+  - "react-style-singleton"
+  - "react-remove-scroll-bar"
+  - "react-remove-scroll-bar"
+  - "get-nonce"
+  - "use-callback-ref"
+  - "detect-node-es"
 
 autoInstallPeers: true
