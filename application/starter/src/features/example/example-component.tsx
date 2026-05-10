@@ -1,0 +1,47 @@
+import type {WebDropdownProps} from "mmcore-ui";
+import {Button, Dropdown} from "mfront-ui";
+import {CreditCardIcon, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
+
+const navigation: WebDropdownProps = {
+    trigger: <Button variant="outline"><SquarePen/></Button>,
+    items: [
+        {nameContent: "Home", action: (data: any) => console.log("Home")},
+        {nameContent: "About", separator: true},
+        {
+            nameContent: "Team",
+            group: [
+                {nameContent: "Members", action: (data: any) => console.log("Members")},
+                {nameContent: "New Members", action: (data: any) => console.log("Members")},
+                {nameContent: "Old Members", action: (data: any) => console.log("Members")},
+            ],
+            separator: true
+        },
+        {
+            nameContent: "Settings",
+            action: (data: any) => console.log("Settings"),
+            nested: [
+                {nameContent: "Profile", action: (data: any) => console.log("Profile"), shortcut: "⇧⌘P"},
+                {nameContent: "Billing", action: (data: any) => console.log("Billing"), shortcut: "⌘B"},
+                {nameContent: "Team", action: (data: any) => console.log("Team")},
+                {nameContent: "Subscription", action: (data: any) => console.log("Subscription")},
+                {nameContent: "Keyboard shortcuts", action: (data: any) => console.log("Keyboard shortcuts")},
+                {nameContent: "Theme", action: (data: any) => console.log("Theme")},
+                {nameContent: "Language", action: (data: any) => console.log("Language")},
+                {nameContent: "Notifications", action: (data: any) => console.log("Notifications")},
+                {nameContent: "Advanced", action: (data: any) => console.log("Advanced")},
+            ],
+            separator: true
+        },
+        {nameContent: (<><UserIcon/> Profile</>)},
+        {nameContent: (<><CreditCardIcon/> Billing</>)},
+        {nameContent: (<><SettingsIcon/> Settings</>)},
+    ]
+}
+
+export default function ExampleComponent() {
+    return (
+        <div className={"m-4"}>
+            <Dropdown {...navigation}/>
+        </div>
+    )
+}
