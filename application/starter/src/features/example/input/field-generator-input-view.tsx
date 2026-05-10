@@ -9,7 +9,7 @@ import {
     useFieldEngine
 } from "mfront-ui";
 import {type WebFieldGroupProps, WebFieldSpec} from "mmcore-ui";
-import {AtSign, Eye, EyeOff} from "lucide-react";
+import {AtSign, Eye, EyeOff, Phone, Search} from "lucide-react";
 import {type UINode, useRef} from "mfront";
 
 export const countryOptions = [
@@ -81,6 +81,14 @@ export default function FieldGeneratorInputView() {
             endOrBottomItems: getPasswordIcon()
         })
 
+        spec.password({
+            name: "systemPassword",
+            label: "System Password",
+            required: true,
+            colSpan: 4,
+            errorText: "Please enter your password",
+        })
+
         spec.email({
             name: "email",
             label: "Email Address",
@@ -92,13 +100,24 @@ export default function FieldGeneratorInputView() {
             ]
         })
 
-        spec.password({
-            name: "systemPassword",
-            label: "System Password",
-            required: true,
+        spec.text({
+            name: "phone",
+            label: "Phone Number",
             colSpan: 4,
-            errorText: "Please enter your password",
+            startOrTopItems: [
+                {itemType: "node", content: <Phone/>},
+            ]
         })
+
+        spec.text({
+            name: "search",
+            label: "Search",
+            colSpan: 4,
+            startOrTopItems: [
+                {itemType: "node", content:  <Search />},
+            ]
+        })
+
 
         spec.text({
             name: "website",
