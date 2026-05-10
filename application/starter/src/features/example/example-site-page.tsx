@@ -7,9 +7,12 @@ export default function ExampleSitePage() {
                 <Sidebar/>
                 <SidebarContent>
                     <SidebarToggler/>
+
+                    Site Content Listed Here
+
                 </SidebarContent>
+                Site Provider Working Now
             </SidebarProvider>
-            Example Site Page
         </>
     )
 }

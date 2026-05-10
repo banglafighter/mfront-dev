@@ -25,6 +25,6 @@ export default class ExampleUr {
         route.addPublicRoute({url: this.ui.grid, component: gridExample})
         route.addPublicRoute({url: this.ui.inputAndForm, component: exampleInputAndFormPage})
         route.addPublicRoute({url: this.ui.component, component: exampleComponent})
-        route.addPublicRoute({url: this.ui.component, component: sitePage})
+        route.addPublicRoute({url: this.ui.sitePage, component: sitePage})
     }
 }
