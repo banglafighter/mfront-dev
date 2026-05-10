@@ -39,6 +39,8 @@ export default function ExampleInputAndFormPage() {
         <div className={"m-4"}>
 
 
+            <FieldGeneratorInputView/>
+
             <div className={"mt-4"}>
                 <SelectField
                     options={countryOptions}
@@ -51,8 +53,6 @@ export default function ExampleInputAndFormPage() {
                     engine={engine}
                 />
             </div>
-
-            <FieldGeneratorInputView/>
 
             <FieldGroup
                 className={"mt-4 mb-4"}

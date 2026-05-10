@@ -12,6 +12,25 @@ import {type WebFieldGroupProps, WebFieldSpec} from "mmcore-ui";
 import {AtSign, Eye, EyeOff} from "lucide-react";
 import {type UINode, useRef} from "mfront";
 
+export const countryOptions = [
+    {label: "Bangladesh", value: "BD"},
+    {label: "Pakistan", value: "PK"},
+    {label: "India", value: "IN"},
+    {label: "United States", value: "US"},
+    {label: "United Kingdom", value: "GB"},
+    {label: "Canada", value: "CA"},
+    {label: "Australia", value: "AU"},
+    {label: "Germany", value: "DE"},
+    {label: "France", value: "FR"},
+    {label: "Japan", value: "JP"},
+    {label: "China", value: "CN"},
+    {label: "South Korea", value: "KR"},
+    {label: "Turkey", value: "TR"},
+    {label: "Russia", value: "RU"},
+    {label: "Saudi Arabia", value: "SA"},
+    {label: "United Arab Emirates", value: "AE"},
+];
+
 
 export default function FieldGeneratorInputView() {
     const engine = useFieldEngine()
@@ -87,6 +106,17 @@ export default function FieldGeneratorInputView() {
             colSpan: 4,
             startOrTopItems: [{itemType: "text", content: "https://www."}],
             endOrBottomItems: [{itemType: "text", content: ".com"}]
+        })
+
+        spec.select({
+            label: "Select country",
+            name: "country",
+            options: countryOptions,
+            labelKey: "label",
+            valueKey: "value",
+            colSpan: 4,
+            required: true,
+            errorText: "Please select country",
         })
 
         spec.textarea({name: "address", label: "Address", colSpan: 12})
