@@ -47,7 +47,7 @@ export default function ExampleInputAndFormPage() {
                     name={"country"}
                     label={"Country"}
                     required={true}
-                    multiple={false}
+                    multiple={true}
                     engine={engine}
                 />
             </div>
