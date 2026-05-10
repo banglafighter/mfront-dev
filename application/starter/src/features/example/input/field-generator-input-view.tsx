@@ -109,6 +109,7 @@ export default function FieldGeneratorInputView() {
         })
 
         spec.select({
+            placeholder: "Select country",
             label: "Select country",
             name: "country",
             options: countryOptions,
