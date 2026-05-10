@@ -1,6 +1,6 @@
 import type {WebDropdownProps} from "mmcore-ui";
-import {Button, Dropdown} from "mfront-ui";
-import {CreditCardIcon, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
+import {Button, Card, CardBody, Dropdown} from "mfront-ui";
+import {ChevronDownIcon, CreditCardIcon, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
 
 const navigation: WebDropdownProps = {
     trigger: <Button variant="outline"><SquarePen/></Button>,
