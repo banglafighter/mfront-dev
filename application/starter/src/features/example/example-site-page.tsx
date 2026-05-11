@@ -59,7 +59,7 @@ export default function ExampleSitePage() {
     return (
         <>
             <SidebarProvider >
-                <Sidebar menu={menuItems} collapsible="offcanvas" variant={"inset"}/>
+                <Sidebar menu={menuItems} collapsible="icon" variant={"inset"}/>
                 <SidebarContent>
                     <SidebarToggler/>
 
