@@ -1,28 +1,55 @@
 import {Button, Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui"
 import {useState} from "mfront";
 import {type SidebarMenuItemProps} from "mmcore-ui";
-import {Cog, Component} from "lucide-react";
+import {BookOpen, Bot, Map, Component, Frame, PieChart, Settings2, SquareTerminal, MoreHorizontal} from "lucide-react";
 
 const menuItems: SidebarMenuItemProps[] = [
-    {menuContent: "Overview"},
-    {menuContent: "Installation"},
     {
-        menuContent: <><Cog/> Modules</>,
-        nested: [
-            {menuContent: "mFront"},
-            {menuContent: "mFront UI"},
-            {menuContent: "mFront CLI"},
-        ]
-    },
-    {
-        menuContent: "User Interface",
+        menuContent: "Platform",
         group: [
             {
-                menuContent: (<><Component/> Components</>),
+                menuContent: (<><SquareTerminal/> Playground</>),
                 nested: [
-                    {menuContent: "Button"}
+                    {menuContent: "History"},
+                    {menuContent: "Starred"},
+                    {menuContent: "Settings"},
+                ]
+            },
+            {
+                menuContent: (<><Bot/> Models</>),
+                nested: [
+                    {menuContent: "Genesis"},
+                    {menuContent: "Explorer"},
+                    {menuContent: "Quantum"},
+                ]
+            },
+            {
+                menuContent: (<><BookOpen/> Documentation</>),
+                nested: [
+                    {menuContent: "Introduction"},
+                    {menuContent: "Get Started"},
+                    {menuContent: "Tutorials"},
+                    {menuContent: "Changelog"},
+                ]
+            },
+            {
+                menuContent: (<><Settings2/> Settings</>),
+                nested: [
+                    {menuContent: "General"},
+                    {menuContent: "Team"},
+                    {menuContent: "Billing"},
+                    {menuContent: "Limits"},
                 ]
             }
+        ],
+    },
+    {
+        menuContent: "Projects",
+        group: [
+            {menuContent: (<><Frame/> Design Engineering</>)},
+            {menuContent: (<><PieChart/> Sales & Marketing</>)},
+            {menuContent: (<><Map/> Travel</>)},
+            {menuContent: (<><MoreHorizontal/> More</>)},
         ]
     }
 ]
