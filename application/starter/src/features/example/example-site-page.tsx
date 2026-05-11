@@ -9,6 +9,7 @@ const menuItems: SidebarMenuItemProps[] = [
         group: [
             {
                 menuContent: (<><SquareTerminal/> Playground</>),
+                collapsible: true,
                 nested: [
                     {menuContent: "History"},
                     {menuContent: "Starred"},
