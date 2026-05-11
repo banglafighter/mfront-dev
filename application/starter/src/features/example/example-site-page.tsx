@@ -1,9 +1,11 @@
-import {Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui";
+import {Button, Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui"
+import {useState} from "mfront";
 
 export default function ExampleSitePage() {
+    const [isOpen, toggleOpen] = useState(true)
     return (
         <>
-            <SidebarProvider>
+            <SidebarProvider >
                 <Sidebar/>
                 <SidebarContent>
                     <SidebarToggler/>
@@ -11,7 +13,9 @@ export default function ExampleSitePage() {
                     Site Content Listed Here
 
                 </SidebarContent>
-                Site Provider Working Now
+                <SidebarToggler/>
+
+                <Button onClick={() => toggleOpen(!isOpen)}>Toggle</Button>
             </SidebarProvider>
         </>
     )
