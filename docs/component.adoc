@@ -10,5 +10,7 @@
 * Spinner
 * Dropdown
 * Image
-* Sidebar
 * Typography
+
+== Done
+* Sidebar

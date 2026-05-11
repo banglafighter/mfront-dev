@@ -1,6 +1,6 @@
-import {Button, Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui"
+import {Button, Dropdown, Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui"
 import {useState} from "mfront";
-import {type SidebarMenuItemProps} from "mmcore-ui";
+import {type SidebarMenuItemProps, type WebDropdownProps} from "mmcore-ui";
 import {
     BookOpen,
     Bot,
@@ -11,8 +11,19 @@ import {
     Settings2,
     SquareTerminal,
     MoreHorizontal,
-    LayoutDashboard, ChartNoAxesCombined
+    LayoutDashboard, ChartNoAxesCombined, Mail, Globe, FileUser
 } from "lucide-react";
+
+function getDropdownItems() {
+    const navigation: WebDropdownProps = {
+        trigger: <MoreHorizontal/>,
+        items: [
+            {nameContent: (<><Globe/>Website</>)},
+            {nameContent: (<><Mail/>Email</>)},
+        ]
+    }
+    return <Dropdown {...navigation}/>
+}
 
 const menuItems: SidebarMenuItemProps[] = [
     {
@@ -27,6 +38,11 @@ const menuItems: SidebarMenuItemProps[] = [
                     {menuContent: "Billing"},
                 ]
             },
+            {
+                menuContent: (<><FileUser/> Contact</>),
+                menuNext: getDropdownItems(),
+                menuNextShowOnHover: true
+            }
         ]
     },
     {
