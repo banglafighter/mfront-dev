@@ -39,6 +39,7 @@ const navigation: WebDropdownProps = {
 }
 
 export default function ExampleComponent() {
+    const drawerEngine = useDialogEngine()
     const dialog = useDialogEngine()
 
     const dialogContent = () => {
@@ -49,7 +50,8 @@ export default function ExampleComponent() {
 
     return (
         <div className={"m-4 flex gap-3"}>
-            <DialogGenerator engine={dialog} body={dialogContent()} type={"drawer"}/>
+            <DialogGenerator engine={drawerEngine} body={dialogContent()} type={"drawer"}/>
+            <DialogGenerator engine={dialog} body={dialogContent()} type={"dialog"}/>
 
             <Button variant={"primary"} onClick={() =>
                 dialog.open({
@@ -60,9 +62,22 @@ export default function ExampleComponent() {
                 Open Dialog
             </Button>
 
+            <Button variant={"primary"} onClick={() =>
+                drawerEngine.open({
+                    title: "Title " + Math.floor(Math.random() * 1000),
+                    slideFrom: "right",
+                })
+            }>
+                Open Drawer
+            </Button>
+
             <Button variant={"outline"} onClick={() =>
                 dialog.confirm({
                     body: "Are you sure want to delete this?",
+                    confirmButtonLabel: "Yes",
+                    confirmButtonAction: (data: unknown) => {
+                        alert("Confirmed")
+                    }
                 })
             }>
                 Open Confirm
