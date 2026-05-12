@@ -86,14 +86,20 @@ export default function ExampleComponent() {
             <Button variant={"secondary"} onClick={() =>
                 dialog.confirm({
                     dialogSize: "small",
-                    body: (<div className={"mt-3 mb-3 flex"}> <OctagonAlert className={"mr-3"}/> Are you sure want to delete this?</div>),
+                    body: (
+                        <div className={"mt-3 mb-3 flex"}>
+                            <OctagonAlert className={"mr-3"}/>
+                            Are you sure want to delete this?
+                        </div>),
                     confirmButtonLabel: "Yes",
                     confirmButtonAction: (data: unknown) => {
                         alert("Confirmed")
                     },
                     footerActionButtons: [
                         {
-                            label: "Delete all", variant: "danger", onClick: (data: unknown) => {
+                            label: "Delete all",
+                            variant: "danger",
+                            onClick: (data: unknown) => {
                             }
                         }
                     ]
