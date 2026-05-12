@@ -49,20 +49,26 @@ export default function ExampleComponent() {
 
     return (
         <div className={"m-4 flex gap-3"}>
-            <div className={"mt-4"}>
-                <Button variant={"primary"} onClick={() =>
-                    dialog.open({
-                        title: "Title " + Math.floor(Math.random() * 1000),
-                        slideFrom: "right",
-                    })
-                }>
-                    Open Dialog
-                </Button>
-                <DialogGenerator engine={dialog} body={dialogContent()} type={"drawer"}/>
-            </div>
-            <div className={"mt-4"}>
-                <Dropdown {...navigation}/>
-            </div>
+            <DialogGenerator engine={dialog} body={dialogContent()} type={"drawer"}/>
+
+            <Button variant={"primary"} onClick={() =>
+                dialog.open({
+                    title: "Title " + Math.floor(Math.random() * 1000),
+                    slideFrom: "right",
+                })
+            }>
+                Open Dialog
+            </Button>
+
+            <Button variant={"outline"} onClick={() =>
+                dialog.confirm({
+                    body: "Are you sure want to delete this?",
+                })
+            }>
+                Open Confirm
+            </Button>
+
+            <Dropdown {...navigation}/>
         </div>
     )
 }
