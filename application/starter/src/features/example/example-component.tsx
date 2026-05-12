@@ -54,7 +54,6 @@ export default function ExampleComponent() {
                     dialog.open({
                         title: "Title " + Math.floor(Math.random() * 1000),
                         slideFrom: "right",
-                        subTitle: "SubTitle"
                     })
                 }>
                     Open Dialog
