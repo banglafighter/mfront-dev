@@ -50,10 +50,16 @@ export default function ExampleComponent() {
     return (
         <div className={"m-4 flex gap-3"}>
             <div className={"mt-4"}>
-                <Button variant={"primary"} onClick={() => dialog.open()}>
+                <Button variant={"primary"} onClick={() =>
+                    dialog.open({
+                        title: "Title " + Math.floor(Math.random() * 1000),
+                        slideFrom: "right",
+                        subTitle: "SubTitle"
+                    })
+                }>
                     Open Dialog
                 </Button>
-                <DialogGenerator engine={dialog} body={dialogContent()} defaultOpen={true}/>
+                <DialogGenerator engine={dialog} body={dialogContent()} type={"drawer"}/>
             </div>
             <div className={"mt-4"}>
                 <Dropdown {...navigation}/>
