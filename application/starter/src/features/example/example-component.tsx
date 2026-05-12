@@ -1,6 +1,6 @@
 import type {WebDropdownProps} from "mmcore-ui";
-import {Button, Card, CardBody, Dropdown} from "mfront-ui";
-import {ChevronDownIcon, CreditCardIcon, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
+import {Button, DialogGenerator, Dropdown, useDialogEngine} from "mfront-ui";
+import {CreditCardIcon, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
 
 const navigation: WebDropdownProps = {
     trigger: <Button variant="outline"><SquarePen/></Button>,
@@ -39,9 +39,25 @@ const navigation: WebDropdownProps = {
 }
 
 export default function ExampleComponent() {
+    const dialog = useDialogEngine()
+
+    const dialogContent = () => {
+        return (
+            <>Content</>
+        )
+    }
+
     return (
-        <div className={"m-4"}>
-            <Dropdown {...navigation}/>
+        <div className={"m-4 flex gap-3"}>
+            <div className={"mt-4"}>
+                <Button variant={"primary"} onClick={() => dialog.open()}>
+                    Open Dialog
+                </Button>
+                <DialogGenerator engine={dialog} body={dialogContent()} defaultOpen={true}/>
+            </div>
+            <div className={"mt-4"}>
+                <Dropdown {...navigation}/>
+            </div>
         </div>
     )
 }

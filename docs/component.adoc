@@ -8,9 +8,9 @@
 * Dialog
 * Tab
 * Spinner
-* Dropdown
 * Image
 * Typography
 
 == Done
 * Sidebar
+* Dropdown
