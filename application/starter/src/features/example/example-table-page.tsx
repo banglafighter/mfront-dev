@@ -1,4 +1,5 @@
-import {Table, TBody, TD, TFoot, TH, THead, TR} from "mfront-ui";
+import {Table, TableGenerator, TBody, TD, TFoot, TH, THead, TR, useTableEngine} from "mfront-ui";
+import {type WebTableGeneratorColumnProps} from "mmcore-ui";
 
 const invoices = [
   {
@@ -77,10 +78,29 @@ function BasicTable (){
     )
 }
 
+function TableEngineExample() {
+    const engine = useTableEngine()
+    engine.registerColumns((columns: WebTableGeneratorColumnProps[]): WebTableGeneratorColumnProps[] => {
+        columns.push(
+            {columnName: "invoice", headerContent: "Invoice", sortable: true},
+            {columnName: "paymentStatus", headerContent: "Payment Status", sortable: true},
+            {columnName: "paymentMethod", headerContent: "Payment Method", sortable: true},
+            {columnName: "totalAmount", headerContent: "Total Amount", sortable: true},
+        )
+        return columns
+    })
+    return (
+        <>
+            <TableGenerator engine={engine}/>
+        </>
+    )
+}
+
 export default function ExampleTablePage() {
     return (
         <>
             <div className={"m-4"}>
+                <TableEngineExample/>
                 <BasicTable/>
             </div>
         </>
