@@ -6,6 +6,7 @@ const gridExample = loadPage(() => import("./example-grid-page"))
 const exampleInputAndFormPage = loadPage(() => import("./example-input-and-form-page"))
 const exampleComponent = loadPage(() => import("./example-component"))
 const sitePage = loadPage(() => import("./example-site-page"))
+const siteTable = loadPage(() => import("./example-table-page"))
 
 const UI_BASE_URL = "/example"
 export default class ExampleUr {
@@ -18,6 +19,7 @@ export default class ExampleUr {
         inputAndForm: `${UI_BASE_URL}/input-and-form`,
         component: `${UI_BASE_URL}/component`,
         sitePage: `${UI_BASE_URL}/site`,
+        siteTable: `${UI_BASE_URL}/table`,
     }
 
     static registerRoute(route: MRoute): void {
@@ -26,5 +28,6 @@ export default class ExampleUr {
         route.addPublicRoute({url: this.ui.inputAndForm, component: exampleInputAndFormPage})
         route.addPublicRoute({url: this.ui.component, component: exampleComponent})
         route.addPublicRoute({url: this.ui.sitePage, component: sitePage})
+        route.addPublicRoute({url: this.ui.siteTable, component: siteTable})
     }
 }
