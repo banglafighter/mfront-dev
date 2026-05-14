@@ -1,5 +1,15 @@
-import type {WebDropdownProps} from "mmcore-ui";
-import {Button, DialogGenerator, Dropdown, useDialogEngine} from "mfront-ui";
+import {type WebDropdownProps, type WebTabProps} from "mmcore-ui";
+import {
+    Button,
+    Card,
+    CardBody,
+    CardHeader,
+    CardSubTitle,
+    CardTitle,
+    DialogGenerator,
+    Dropdown, Tab,
+    useDialogEngine
+} from "mfront-ui";
 import {CreditCardIcon, OctagonAlert, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
 
 const navigation: WebDropdownProps = {
@@ -38,6 +48,14 @@ const navigation: WebDropdownProps = {
     ]
 }
 
+const tabData: WebTabProps = {
+    items: [
+        {labelContent: "Overview", tabId: "overview", component: <Overview/>},
+        {labelContent: "Analytics", tabId: "analytics", component: <Analytics/>},
+        {labelContent: "Reports", tabId: "reports", component: <Reports/>},
+    ]
+}
+
 export default function ExampleComponent() {
     const drawerEngine = useDialogEngine()
     const dialog = useDialogEngine()
@@ -49,66 +67,127 @@ export default function ExampleComponent() {
     }
 
     return (
-        <div className={"m-4 flex gap-3"}>
-            <DialogGenerator engine={drawerEngine} body={dialogContent()} type={"drawer"}/>
-            <DialogGenerator engine={dialog} body={dialogContent()} type={"dialog"}/>
+        <>
+            <Tab {...tabData} defaultTabId={"reports"} orientation={"horizontal"} selectType={"line"} className={"mb-4"}/>
+            <Tab {...tabData} defaultTabId={"reports"} orientation={"horizontal"} selectType={"default"} className={"mb-4"}/>
+            <Tab {...tabData} defaultTabId={"overview"} orientation={"vertical"} selectType={"line"} className={"mb-4"}/>
+            <Tab {...tabData} defaultTabId={"overview"} orientation={"vertical"} selectType={"default"} className={"mb-4"}/>
 
-            <Button variant={"primary"} onClick={() =>
-                dialog.open({
-                    title: "Title " + Math.floor(Math.random() * 1000),
-                    slideFrom: "right",
-                })
-            }>
-                Open Dialog
-            </Button>
 
-            <Button variant={"primary"} onClick={() =>
-                drawerEngine.open({
-                    title: "Title " + Math.floor(Math.random() * 1000),
-                    slideFrom: "right",
-                })
-            }>
-                Open Drawer
-            </Button>
 
-            <Button variant={"outline"} onClick={() =>
-                dialog.confirm({
-                    body: "Are you sure want to delete this?",
-                    confirmButtonLabel: "Yes",
-                    confirmButtonAction: (data: unknown) => {
-                        alert("Confirmed")
-                    }
-                })
-            }>
-                Open Confirm
-            </Button>
+            <div className={"m-4 flex gap-3"}>
+                <DialogGenerator engine={drawerEngine} body={dialogContent()} type={"drawer"}/>
+                <DialogGenerator engine={dialog} body={dialogContent()} type={"dialog"}/>
 
-            <Button variant={"secondary"} onClick={() =>
-                dialog.confirm({
-                    dialogSize: "small",
-                    body: (
-                        <div className={"mt-3 mb-3 flex"}>
-                            <OctagonAlert className={"mr-3"}/>
-                            Are you sure want to delete this?
-                        </div>),
-                    confirmButtonLabel: "Yes",
-                    confirmButtonAction: (data: unknown) => {
-                        alert("Confirmed")
-                    },
-                    footerActionButtons: [
-                        {
-                            label: "Delete all",
-                            variant: "danger",
-                            onClick: (data: unknown) => {
-                            }
+                <Button variant={"primary"} onClick={() =>
+                    dialog.open({
+                        title: "Title " + Math.floor(Math.random() * 1000),
+                        slideFrom: "right",
+                    })
+                }>
+                    Open Dialog
+                </Button>
+
+                <Button variant={"primary"} onClick={() =>
+                    drawerEngine.open({
+                        title: "Title " + Math.floor(Math.random() * 1000),
+                        slideFrom: "right",
+                    })
+                }>
+                    Open Drawer
+                </Button>
+
+                <Button variant={"outline"} onClick={() =>
+                    dialog.confirm({
+                        body: "Are you sure want to delete this?",
+                        confirmButtonLabel: "Yes",
+                        confirmButtonAction: (data: unknown) => {
+                            alert("Confirmed")
                         }
-                    ]
-                })
-            }>
-                Open Advanced Confirm
-            </Button>
+                    })
+                }>
+                    Open Confirm
+                </Button>
 
-            <Dropdown {...navigation}/>
-        </div>
+                <Button variant={"secondary"} onClick={() =>
+                    dialog.confirm({
+                        dialogSize: "small",
+                        body: (
+                            <div className={"mt-3 mb-3 flex"}>
+                                <OctagonAlert className={"mr-3"}/>
+                                Are you sure want to delete this?
+                            </div>),
+                        confirmButtonLabel: "Yes",
+                        confirmButtonAction: (data: unknown) => {
+                            alert("Confirmed")
+                        },
+                        footerActionButtons: [
+                            {
+                                label: "Delete all",
+                                variant: "danger",
+                                onClick: (data: unknown) => {
+                                }
+                            }
+                        ]
+                    })
+                }>
+                    Open Advanced Confirm
+                </Button>
+
+                <Dropdown {...navigation}/>
+            </div>
+        </>
+    )
+}
+
+
+function Overview() {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Overview</CardTitle>
+                <CardSubTitle>
+                    View your key metrics and recent project activity. Track progress
+                    across all your active projects.
+                </CardSubTitle>
+            </CardHeader>
+            <CardBody className="text-sm text-muted-foreground">
+                You have 12 active projects and 3 pending tasks.
+            </CardBody>
+        </Card>
+    )
+}
+
+function Analytics() {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Analytics</CardTitle>
+                <CardSubTitle>
+                    Track performance and user engagement metrics. Monitor trends and
+                    identify growth opportunities.
+                </CardSubTitle>
+            </CardHeader>
+            <CardBody className="text-sm text-muted-foreground">
+                Page views are up 25% compared to last month.
+            </CardBody>
+        </Card>
+    )
+}
+
+function Reports() {
+    return (
+        <Card>
+            <CardHeader>
+                <CardTitle>Reports</CardTitle>
+                <CardSubTitle>
+                    Generate and download your detailed reports. Export data in
+                    multiple formats for analysis.
+                </CardSubTitle>
+            </CardHeader>
+            <CardBody className="text-sm text-muted-foreground">
+                You have 5 reports ready and available to export.
+            </CardBody>
+        </Card>
     )
 }
