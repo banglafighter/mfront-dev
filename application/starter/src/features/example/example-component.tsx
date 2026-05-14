@@ -8,9 +8,12 @@ import {
     CardTitle,
     DialogGenerator,
     Dropdown, Tab,
-    useDialogEngine
+    useDialogEngine,
+    Image
 } from "mfront-ui";
 import {CreditCardIcon, OctagonAlert, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
+import ProductDefault from "./assets/images/product-default.png"
+import Wallpaper from "./assets/images/wallpaper.jpg"
 
 const navigation: WebDropdownProps = {
     trigger: <Button variant="outline"><SquarePen/></Button>,
@@ -68,6 +71,52 @@ export default function ExampleComponent() {
 
     return (
         <>
+            <div className={"m-4 flex gap-3"}>
+                <Image avatar={"default"} fallback={"TM"} alt={"Profile"} src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
+                <Image avatar={"large"} fallback={"TM"} alt={"Profile"} src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
+                <Image avatar={"large"} fallback={"TM"} alt={"Profile"} shape={"circle"} src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
+                <Image
+                    thumb={"product"}
+                    fallback={"P"}
+                    alt={"Product"}
+                    shape={"circle"}
+                    src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
+                <Image
+                    thumb={"product"}
+                    fallback={"P"}
+                    alt={"Product"}
+                    shape={"circle"}
+                    src={"https://wrong-url.com/image.jpg"}/>
+
+                <Image
+                    thumb={"product"}
+                    fallback={"P"}
+                    fallbackSrc={ProductDefault}
+                    alt={"Product"}
+                    shape={"square"}
+                    src={"https://wrong-url.com/image.jpg"}/>
+
+                <Image
+                    className={"w-64 h-24"}
+                    fallback={"P"}
+                    fallbackSrc={ProductDefault}
+                    alt={"Product"}
+                    shape={"square"}
+                    src={Wallpaper}/>
+
+            </div>
+
+            <div className={"m-4 flex gap-3"}>
+                <Image
+                    className={"w-64"}
+                    ratio={"9/12"}
+                    fallback={"P"}
+                    fallbackSrc={ProductDefault}
+                    alt={"Product"}
+                    shape={"square"}
+                    src={Wallpaper}/>
+            </div>
+
             <Tab {...tabData} defaultTabId={"reports"} orientation={"horizontal"} selectType={"line"} className={"mb-4"}/>
             <Tab {...tabData} defaultTabId={"reports"} orientation={"horizontal"} selectType={"default"} className={"mb-4"}/>
             <Tab {...tabData} defaultTabId={"overview"} orientation={"vertical"} selectType={"line"} className={"mb-4"}/>
