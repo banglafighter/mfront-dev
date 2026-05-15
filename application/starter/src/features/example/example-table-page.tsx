@@ -61,34 +61,45 @@ function sortByKey(data: any[], key: string, order: "asc" | "desc") {
 }
 
 
-function BasicTable (){
+function BasicTable() {
     return (
-        <Table>
-            <THead>
-                <TR>
-                    <TH>Invoice</TH>
-                    <TH>Payment Status</TH>
-                    <TH>Payment Method</TH>
-                    <TH className="text-right">Total Amount</TH>
-                </TR>
-            </THead>
-            <TBody>
-                {invoices.map((invoice, index) => (
-                    <TR key={index}>
-                        <TD>{invoice.invoice}</TD>
-                        <TD>{invoice.paymentStatus}</TD>
-                        <TD>{invoice.paymentMethod}</TD>
-                        <TD className="text-right">{invoice.totalAmount}</TD>
+        <div className={"mb-40 mt-15"}>
+            <Table>
+                <THead>
+                    <TR>
+                        <TH>Invoice</TH>
+                        <TH>Payment Status</TH>
+                        <TH>Payment Method</TH>
+                        <TH className="text-right">Total Amount</TH>
                     </TR>
-                ))}
-            </TBody>
-            <TFoot>
-                <TR>
-                    <TD className={"text-right"} colSpan={3}>Total</TD>
-                    <TD className="text-right">$2,500.00</TD>
-                </TR>
-            </TFoot>
-        </Table>
+                </THead>
+                <TBody>
+                    {invoices.map((invoice, index) => (
+                        <TR key={index}>
+                            <TD>{invoice.invoice}</TD>
+                            <TD>{invoice.paymentStatus}</TD>
+                            <TD>{invoice.paymentMethod}</TD>
+                            <TD className="text-right">{invoice.totalAmount}</TD>
+                        </TR>
+                    ))}
+                </TBody>
+                <TFoot>
+                    <TR>
+                        <TD className={"text-right"} colSpan={3}>Total</TD>
+                        <TD className="text-right">$2,500.00</TD>
+                    </TR>
+                </TFoot>
+            </Table>
+            <Pagination
+                className={"mt-3 float-right"}
+                totalPage={50}
+                itemPerPage={25}
+                currentPage={49}
+                onChangePagination={(pageNumber: number) => {
+                    console.log(pageNumber)
+                }}
+            />
+        </div>
     )
 }
 
