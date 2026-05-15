@@ -138,7 +138,7 @@ export default function ExampleAllPage() {
                 <ButtonGroup orientation={"horizontal"} className={"h-8"}>
                     <Button variant="outline" className={"h-8"}><ArrowBigLeft/></Button>
                     <Button variant="outline" className={"h-8"}>1</Button>
-                    <Button variant="primary" className={"h-8"}>2</Button>
+                    <Button variant="primary" disabled={true} className={"h-8"}>2</Button>
                     <Button variant="outline" className={"h-8"}>3</Button>
                     <Button variant="outline" className={"h-8"}><Ellipsis/></Button>
                     <Button variant="outline" className={"h-8"}>45</Button>

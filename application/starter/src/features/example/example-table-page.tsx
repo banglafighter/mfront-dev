@@ -1,4 +1,4 @@
-import {Button, Table, TableGenerator, TBody, TD, TFoot, TH, THead, TR, useTableEngine} from "mfront-ui";
+import {Button, Pagination, Table, TableGenerator, TBody, TD, TFoot, TH, THead, TR, useTableEngine} from "mfront-ui";
 import {type SortDirection, type WebTableGeneratorColumnProps} from "mmcore-ui";
 
 const invoices = [
@@ -121,6 +121,16 @@ export default function ExampleTablePage() {
     return (
         <>
             <div className={"m-4"}>
+                <Pagination
+                    className={"mb-4"}
+                    totalPage={50}
+                    itemPerPage={25}
+                    currentPage={49}
+                    onChangePagination={(pageNumber: number) => {
+                        console.log(pageNumber)
+                    }}
+                />
+
                 <TableEngineExample/>
                 <BasicTable/>
             </div>
