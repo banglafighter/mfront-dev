@@ -5,7 +5,7 @@ import {
     CardFooter,
     CardHeader,
     CardSubTitle,
-    CardTitle, FieldGroup,
+    CardTitle, FieldGroup, FileField,
     Grid,
     Input,
     InputField,
@@ -37,6 +37,15 @@ export default function ExampleInputAndFormPage() {
     const engine = useFieldEngine()
     return (
         <div className={"m-4"}>
+
+
+            <FileField
+                label={"Profile"}
+                name={"profile"}
+                className={"mt-4 mb-4"}
+                required={true}
+                isError={false}
+            />
 
 
             <FieldGeneratorInputView/>
