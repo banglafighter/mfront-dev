@@ -139,12 +139,12 @@ export default function ExampleAllPage() {
                     <Button variant="outline" className={"h-8"}><ArrowBigLeft/></Button>
                     <Button variant="outline" className={"h-8"}>1</Button>
                     <Button variant="primary" className={"h-8"}>2</Button>
-                    <Button variant="outline">3</Button>
-                    <Button variant="outline"><Ellipsis/></Button>
-                    <Button variant="outline">45</Button>
-                    <Button variant="outline">48</Button>
-                    <Button variant="outline">50</Button>
-                    <Button variant="outline"><ArrowBigRight/></Button>
+                    <Button variant="outline" className={"h-8"}>3</Button>
+                    <Button variant="outline" className={"h-8"}><Ellipsis/></Button>
+                    <Button variant="outline" className={"h-8"}>45</Button>
+                    <Button variant="outline" className={"h-8"}>48</Button>
+                    <Button variant="outline" className={"h-8"}>50</Button>
+                    <Button variant="outline" className={"h-8"}><ArrowBigRight/></Button>
                 </ButtonGroup>
             </div>
 
