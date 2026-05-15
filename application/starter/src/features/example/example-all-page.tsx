@@ -6,11 +6,20 @@ import {
     CardHeader,
     CardSubTitle,
     CardTitle,
-    Loader,
+    Loader, SelectField,
     Separator,
     toast
 } from "mfront-ui";
-import {ArrowUpIcon, Loader as LoaderIcon, CircleFadingArrowUpIcon, LoaderPinwheel, Move, RefreshCcw} from "lucide-react";
+import {
+    ArrowUpIcon,
+    Loader as LoaderIcon,
+    CircleFadingArrowUpIcon,
+    LoaderPinwheel,
+    Move,
+    RefreshCcw,
+    ArrowBigLeft, ArrowBigRight, Ellipsis
+} from "lucide-react";
+import {countryOptions} from "./example-input-and-form-page";
 
 function BasicCard() {
     return (
@@ -94,6 +103,8 @@ export default function ExampleAllPage() {
                     Generating
                 </Button>
 
+
+
                 <Loader size={"xs"} speed={.5} icon={Move}/>
                 <Loader size={"sm"} speed={1} icon={LoaderIcon}/>
                 <Loader size={"default"} speed={2} icon={LoaderPinwheel}/>
@@ -112,7 +123,31 @@ export default function ExampleAllPage() {
                 }}>
                     Show tost
                 </Button>
+
+
             </div>
+            <div className={"flex items-end gap-2 mt-4"}>
+                <SelectField
+                    options={[{"label": 10, value: 10}, {"label": 20, value: 20}, {"label": 50, value: 50}, {"label": 100, value: 100}]}
+                    labelKey={"label"}
+                    valueKey={"value"}
+                    name={"country"}
+                    className={"w-15"}
+                    showClear={false}
+                />
+                <ButtonGroup orientation={"horizontal"} className={"h-8"}>
+                    <Button variant="outline" className={"h-8"}><ArrowBigLeft/></Button>
+                    <Button variant="outline" className={"h-8"}>1</Button>
+                    <Button variant="primary" className={"h-8"}>2</Button>
+                    <Button variant="outline">3</Button>
+                    <Button variant="outline"><Ellipsis/></Button>
+                    <Button variant="outline">45</Button>
+                    <Button variant="outline">48</Button>
+                    <Button variant="outline">50</Button>
+                    <Button variant="outline"><ArrowBigRight/></Button>
+                </ButtonGroup>
+            </div>
+
         </div>
     )
 }
