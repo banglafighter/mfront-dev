@@ -1,5 +1,5 @@
-import {Table, TableGenerator, TBody, TD, TFoot, TH, THead, TR, useTableEngine} from "mfront-ui";
-import {type WebTableGeneratorColumnProps} from "mmcore-ui";
+import {Button, Table, TableGenerator, TBody, TD, TFoot, TH, THead, TR, useTableEngine} from "mfront-ui";
+import {type SortDirection, type WebTableGeneratorColumnProps} from "mmcore-ui";
 
 const invoices = [
   {
@@ -46,6 +46,20 @@ const invoices = [
   },
 ]
 
+function sortByKey(data: any[], key: string, order: "asc" | "desc") {
+    return [...data].sort((a, b) => {
+        const valA = a[key];
+        const valB = b[key];
+
+        const aStr = String(valA);
+        const bStr = String(valB);
+
+        return order === "asc"
+            ? aStr.localeCompare(bStr)
+            : bStr.localeCompare(aStr);
+    });
+}
+
 
 function BasicTable (){
     return (
@@ -85,13 +99,20 @@ function TableEngineExample() {
             {columnName: "invoice", headerContent: "Invoice", sortable: true},
             {columnName: "paymentStatus", headerContent: "Payment Status", sortable: true},
             {columnName: "paymentMethod", headerContent: "Payment Method", sortable: true},
-            {columnName: "totalAmount", headerContent: "Total Amount", sortable: true},
+            {columnName: "totalAmount", headerContent: "Total Amount", sortable: false, columnClassName: "text-right"},
         )
         return columns
     })
+
+    const handleSorting = (sortDirection: SortDirection, columnName: string) => {
+        const sortedData = sortByKey(invoices, columnName, sortDirection as "asc" | "desc");
+        engine.loadData(sortedData);
+    }
+
     return (
         <>
-            <TableGenerator engine={engine}/>
+            <Button onClick={()=>{ engine.loadData(invoices)}}>Load Data</Button>
+            <TableGenerator engine={engine} className={"mt-4 mb-4"} onClickSort={handleSorting}/>
         </>
     )
 }
