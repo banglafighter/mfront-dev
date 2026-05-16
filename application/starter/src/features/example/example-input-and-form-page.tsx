@@ -5,7 +5,7 @@ import {
     CardFooter,
     CardHeader,
     CardSubTitle,
-    CardTitle, FieldGroup, FileField,
+    CardTitle, CheckField, FieldGroup, FileField,
     Grid,
     Input,
     InputField,
@@ -37,6 +37,26 @@ export default function ExampleInputAndFormPage() {
     const engine = useFieldEngine()
     return (
         <div className={"m-4"}>
+
+            <CheckField
+                type={"checkbox"}
+                label={"Accept terms and conditions"}
+                hintsText={"By clicking this checkbox, you agree to the terms and conditions."}
+                name={"profile"}
+                className={"mt-4 mb-4"}
+                required={true}
+                isError={false}
+            />
+
+            <CheckField
+                type={"switch"}
+                label={"Accept terms and conditions"}
+                hintsText={"By clicking this checkbox, you agree to the terms and conditions."}
+                name={"profile"}
+                className={"mt-4 mb-4"}
+                required={true}
+                isError={false}
+            />
 
 
             <FileField
