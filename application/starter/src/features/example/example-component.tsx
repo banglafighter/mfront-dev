@@ -9,7 +9,7 @@ import {
     DialogGenerator,
     Dropdown, Tab,
     useDialogEngine,
-    Image
+    Image, Popover
 } from "mfront-ui";
 import {CreditCardIcon, OctagonAlert, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
 import ProductDefault from "./assets/images/product-default.png"
@@ -71,6 +71,14 @@ export default function ExampleComponent() {
 
     return (
         <>
+            <div className={"m-4 flex gap-3"}>
+                <Popover
+                    trigger={<Button variant="primary"><SquarePen/></Button>}
+                    title={"Popover Title"}
+                    subTitle={"Popover Sub Title here will be specified"}
+                    body={<>Body</>}
+                />
+            </div>
             <div className={"m-4 flex gap-3"}>
                 <Image avatar={"default"} fallback={"TM"} alt={"Profile"} src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
                 <Image avatar={"large"} fallback={"TM"} alt={"Profile"} src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
