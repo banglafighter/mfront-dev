@@ -4,6 +4,7 @@
   "scripts": {
     "setup-project": "node scripts/msm.js",
     "start": "pnpm --filter starter run start",
+    "app-build": "pnpm --filter starter run build",
 
     "build": "pnpm -r run build",
     "version:alpha": "pnpm -r exec pnpm version prerelease --preid alpha --no-git-tag-version",

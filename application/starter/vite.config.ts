@@ -25,10 +25,12 @@ export default defineConfig(({mode}) => {
             open: true
         },
         resolve: {
-            preserveSymlinks: true,
+            // preserveSymlinks: true,
+            dedupe: ['react', 'react-dom'],
             tsconfigPaths: true,
         },
         build: {
+            sourcemap: true,
             rollupOptions: {
                 output: {
                     entryFileNames: 'assets/[name].[hash].js',
