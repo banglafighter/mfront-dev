@@ -79,7 +79,6 @@ export default function ExampleComponent() {
         )
     }
 
-    useI18n()
     loadTranslation("en", ENGLISH)
     loadTranslation("bn", BANGLA)
 
