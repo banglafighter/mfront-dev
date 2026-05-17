@@ -14,6 +14,7 @@ import {
 import {CreditCardIcon, OctagonAlert, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
 import ProductDefault from "./assets/images/product-default.png"
 import Wallpaper from "./assets/images/wallpaper.jpg"
+import {_t, activeLanguage, changeLanguage, loadTranslation, useI18n} from "mfront";
 
 const navigation: WebDropdownProps = {
     trigger: <Button variant="outline"><SquarePen/></Button>,
@@ -59,6 +60,15 @@ const tabData: WebTabProps = {
     ]
 }
 
+export const BANGLA = {
+    "name" : "নাম",
+}
+
+export const ENGLISH = {
+    "name" : "Name",
+};
+
+
 export default function ExampleComponent() {
     const drawerEngine = useDialogEngine()
     const dialog = useDialogEngine()
@@ -69,8 +79,24 @@ export default function ExampleComponent() {
         )
     }
 
+    useI18n()
+    loadTranslation("en", ENGLISH)
+    loadTranslation("bn", BANGLA)
+
+    let changeToLanguage: string = "en"
+    if (activeLanguage() === "en") {
+        changeToLanguage = "bn"
+    }
+
     return (
         <>
+            <div className={"m-4 flex gap-3"}>
+                <div className={"font-large"}>Active Language {_t(activeLanguage())}</div>
+                <div className={"font-large"}>Change Language {_t("name")}</div>
+                <Button variant={"outline"} onClick={() =>{changeLanguage(changeToLanguage)}}>
+                    {_t("Change Language")}
+                </Button>
+            </div>
             <div className={"m-4 flex gap-3"}>
                 <Popover
                     trigger={<Button variant="primary"><SquarePen/></Button>}
