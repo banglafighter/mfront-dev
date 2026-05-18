@@ -28,3 +28,6 @@ always-auth=true
 ```
 
 set NODE_OPTIONS=--max-old-space-size=8192
+pnpm adduser --registry http://localhost:4873
+user user
+pnpm login --registry http://localhost:4873
