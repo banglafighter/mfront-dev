@@ -53,7 +53,7 @@ const menuItems: SidebarMenuItemProps[] = [
                     menuContent: (<><SquareTerminal/> Playground</>),
                     collapsible: true,
                     nested: [
-                        {menuContent: "History"},
+                        {menuContent: "History", navUrl: "/example"},
                         {menuContent: "Starred"},
                         {menuContent: "Settings"},
                     ]
