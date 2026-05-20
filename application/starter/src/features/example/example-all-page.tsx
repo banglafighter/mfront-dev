@@ -20,6 +20,9 @@ import {
     ArrowBigLeft, ArrowBigRight, Ellipsis
 } from "lucide-react";
 import {countryOptions} from "./example-input-and-form-page";
+import {mcRouterUseNavigate, mcRouterUseNavigation} from "mfront-core";
+import ExampleUr from "./example-ur";
+import {useRouteNav} from "mfront";
 
 function BasicCard() {
     return (
@@ -40,8 +43,14 @@ function BasicCard() {
 }
 
 export default function ExampleAllPage() {
+    const {navigate} = useRouteNav()
     return (
         <div className={"m-4"}>
+
+            <Button onClick={() => {navigate(ExampleUr.ui.sitePage)}}>
+                Navigate
+            </Button>
+
             <BasicCard/>
             <Separator className={"mt-5 mb-5"}/>
             <div className="flex flex-wrap items-center gap-2 md:flex-row">
