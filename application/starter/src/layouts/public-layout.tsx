@@ -5,7 +5,6 @@ import {
     BookOpen,
     Bot,
     ChartNoAxesCombined,
-    FileUser,
     Frame,
     LayoutDashboard, Map, MoreHorizontal, PieChart,
     Settings2,
