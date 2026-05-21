@@ -1,5 +1,5 @@
-import {Button, Dropdown, Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui"
-import {useState} from "mfront";
+import {Button, Dropdown, Separator, Sidebar, SidebarContent, SidebarProvider, SidebarToggler} from "mfront-ui"
+import {PageSlot, useState} from "mfront";
 import {type SidebarMenuItemProps, type WebDropdownProps} from "mmcore-ui";
 import {
     BookOpen,
@@ -110,11 +110,21 @@ export default function ExampleSitePage() {
             <SidebarProvider>
                 <Sidebar menu={menuItems} collapsible="icon" variant={"inset"}/>
                 <SidebarContent>
-                    <SidebarToggler/>
-
-                    Site Content Listed Here
-                    <Button onClick={() => toggleOpen(!isOpen)}>Toggle</Button>
-
+                    <header
+                        className="flex h-12 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
+                        <div className="flex items-center gap-2 px-4">
+                            <SidebarToggler className="-ml-1"/>
+                            <Separator
+                                orientation="vertical"
+                                className="mr-2 data-[orientation=vertical]:h-4"
+                            />
+                            mFront Documentation
+                        </div>
+                    </header>
+                    <Separator/>
+                    <div className="p-3">
+                        <PageSlot/>
+                    </div>
                 </SidebarContent>
             </SidebarProvider>
         </>
