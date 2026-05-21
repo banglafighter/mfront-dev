@@ -164,7 +164,10 @@ export default function ExampleComponent() {
                 <Button variant={"primary"} onClick={() =>
                     dialog.open({
                         title: "Title " + Math.floor(Math.random() * 1000),
-                        slideFrom: "right",
+                        slideFrom: "top",
+                        type: "dialog",
+                        dialogSize: "large",
+                        disableBlockClose: true,
                     })
                 }>
                     Open Dialog

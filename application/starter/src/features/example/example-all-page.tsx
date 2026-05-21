@@ -127,7 +127,8 @@ export default function ExampleAllPage() {
                     toast({
                         message: "Bismillah Message",
                         type: "error",
-                        transition: "flip"
+                        transition: "flip",
+                        position: "bottom"
                     })
                 }}>
                     Show tost

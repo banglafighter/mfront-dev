@@ -140,7 +140,6 @@ export default function ExampleGridPage() {
                 </GridItem>
             </Grid>
             <Separator className={"mt-5 mb-5"}/>
-            
         </div>
     )
 }

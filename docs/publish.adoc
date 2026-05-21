@@ -24,10 +24,14 @@ npm install -g verdaccio
 * .npmrc
 ```
 registry=http://localhost:4873/
-always-auth=true
 ```
 
 set NODE_OPTIONS=--max-old-space-size=8192
+pnpm release:alpha
+
+verdaccio --listen 0.0.0.0:4873
+
+
 pnpm adduser --registry http://localhost:4873
 user user
 pnpm login --registry http://localhost:4873
