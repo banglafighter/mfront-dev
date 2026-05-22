@@ -29,8 +29,8 @@
       "mfront-cli": [
         "dependencies/mfront-cli"
       ],
-      "mfront-ui-exp": [
-        "dependencies/mfront-ui-exp"
+      "mfront-default-libs": [
+        "dependencies/mfront-default-libs"
       ]
     }
   }

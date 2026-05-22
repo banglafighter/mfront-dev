@@ -17,6 +17,7 @@ dependencies:
         - url: https://github.com/banglafighter/mfront-cli.git
         - url: https://github.com/banglafighter/mfront-core.git
         - url: https://github.com/banglafighter/create-mfront-app.git
+        - url: https://github.com/banglafighter/mfront-default-libs.git
 
 endScript:
   - pnpm install
