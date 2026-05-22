@@ -30,21 +30,10 @@ export default defineConfig(({mode}) => {
             tsconfigPaths: true,
         },
         build: {
-            sourcemap: true,
-            rollupOptions: {
-                output: {
-                    entryFileNames: 'assets/[name].[hash].js',
-                    chunkFileNames: 'assets/[name].[hash].js',
-                    assetFileNames: 'assets/[name].[hash].[ext]',
-                    manualChunks(id) {  // Need to improve it
-                        if (id.includes('node_modules')) {
-                            return 'vendor'
-                        }
-                    }
-                }
-            }
+            sourcemap: false,
+            cssCodeSplit: true,
+            chunkSizeWarningLimit: 1000
         },
-
         define: defineEnv
     }
 })
