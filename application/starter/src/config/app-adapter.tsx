@@ -2,6 +2,8 @@ import {Loader, ToastBox, type UIAdapterData} from "mfront-ui";
 import {MAdapter, type UINode} from "mfront";
 import {DefaultUIImplementation} from "mfront-default-ui";
 import {LoaderPinwheel} from "lucide-react";
+import type {HTTPClient} from "mfront-core";
+import {AxiosHTTPClient} from "mfront-default-libs";
 
 export default class AppAdapter extends MAdapter {
     setCentralUI(): UINode {
@@ -22,6 +24,10 @@ export default class AppAdapter extends MAdapter {
 
     setUIAdapter(): UIAdapterData {
         return DefaultUIImplementation;
+    }
+
+    setHTTPClient(): HTTPClient {
+        return AxiosHTTPClient;
     }
 
 }

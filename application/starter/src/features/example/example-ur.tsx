@@ -8,6 +8,7 @@ const exampleComponent = loadPage(() => import("./example-component"))
 const sitePage = loadPage(() => import("./example-site-page"))
 const siteTable = loadPage(() => import("./example-table-page"))
 const calendar = loadPage(() => import("./example-calendar-page"))
+const httpPage = loadPage(() => import("./example-http-page"))
 
 const UI_BASE_URL = "/example"
 export default class ExampleUr {
@@ -22,6 +23,7 @@ export default class ExampleUr {
         sitePage: `${UI_BASE_URL}/site`,
         siteTable: `${UI_BASE_URL}/table`,
         calendar: `${UI_BASE_URL}/calendar`,
+        httpPage: `${UI_BASE_URL}/http`,
     }
 
     static registerRoute(route: MRoute): void {
@@ -32,5 +34,6 @@ export default class ExampleUr {
         route.addPublicRoute({url: this.ui.sitePage, component: sitePage})
         route.addPublicRoute({url: this.ui.siteTable, component: siteTable})
         route.addPublicRoute({url: this.ui.calendar, component: calendar})
+        route.addPublicRoute({url: this.ui.httpPage, component: httpPage})
     }
 }
