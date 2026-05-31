@@ -22,7 +22,7 @@ import {
 import {countryOptions} from "./example-input-and-form-page";
 import {mcRouterUseNavigate, mcRouterUseNavigation} from "mfront-core";
 import ExampleUr from "./example-ur";
-import {useRouteNav} from "mfront";
+import {useAppContext, useRouteNav} from "mfront";
 
 function BasicCard() {
     return (
@@ -44,8 +44,23 @@ function BasicCard() {
 
 export default function ExampleAllPage() {
     const {navigate} = useRouteNav()
+    const startLoading = useAppContext((state) => state.startLoading)
+    const stopLoading = useAppContext((state) => state.stopLoading)
+
+    const handleLoading = async () => {
+        startLoading()
+        await new Promise((resolve) => setTimeout(resolve, 5000))
+        stopLoading()
+    }
+
     return (
         <div className={"m-4"}>
+
+
+            <Button onClick={handleLoading}>
+                Show Loader
+            </Button>
+
 
             <Button onClick={() => {navigate(ExampleUr.ui.sitePage)}}>
                 Navigate
