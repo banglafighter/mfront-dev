@@ -9,8 +9,8 @@
   "dependencies": {
     "lucide-react": "^1.8.0",
     "mfront": "workspace:*",
-    "mfront-default-ui": "workspace:*",
     "mfront-default-libs": "workspace:*",
+    "mfront-default-ui": "workspace:*",
     "mfront-ui": "workspace:*"
   },
   "devDependencies": {
@@ -20,5 +20,5 @@
     "typescript": "~6.0.2",
     "vite": "^8.0.11"
   },
-  "version": "0.0.1-alpha.62"
+  "version": "0.0.1-alpha.65"
 }

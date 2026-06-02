@@ -19,8 +19,6 @@ import {
     RefreshCcw,
     ArrowBigLeft, ArrowBigRight, Ellipsis
 } from "lucide-react";
-import {countryOptions} from "./example-input-and-form-page";
-import {mcRouterUseNavigate, mcRouterUseNavigation} from "mfront-core";
 import ExampleUr from "./example-ur";
 import {useAppContext, useRouteNav} from "mfront";
 
