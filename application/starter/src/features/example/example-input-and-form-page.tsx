@@ -75,11 +75,31 @@ export default function ExampleInputAndFormPage() {
                     options={countryOptions}
                     labelKey={"label"}
                     valueKey={"value"}
-                    name={"country"}
+                    name={"countries"}
                     label={"Country"}
                     required={true}
                     multiple={true}
                     engine={engine}
+                    defaultValue={["BD", "PK"]}
+                    onChange={(event: any) => {
+                        console.log(event)
+                    }}
+                />
+            </div>
+
+            <div className={"mt-4"}>
+                <SelectField
+                    options={countryOptions}
+                    labelKey={"label"}
+                    valueKey={"value"}
+                    name={"country"}
+                    label={"Country"}
+                    required={true}
+                    engine={engine}
+                    defaultValue={"BD"}
+                    onChange={(event: any) => {
+                        console.log(event)
+                    }}
                 />
             </div>
 

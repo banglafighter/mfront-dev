@@ -43,7 +43,7 @@ function TableView() {
         }
     }
 
-    const loadData = async (sortDirection: SortDirection | null = "desc", columnName: string | null = null, page: number | null = null) => {
+    const loadData = async (sortDirection: SortDirection | null = "desc", columnName: string | null = null, page: number | null = null, itemPerPage: number | null = null) => {
         const query: Record<string, any> = {}
         if (columnName && sortDirection) {
             query["sort-field"] = columnName
@@ -51,6 +51,9 @@ function TableView() {
         }
         if (page) {
             query["page"] = page
+        }
+        if (itemPerPage) {
+            query["per-page"] = itemPerPage
         }
         const response = await httpClient.request<Record<string, any>, unknown, Record<string, any>>({
             url: "api/v1/account/read-all",
@@ -108,6 +111,9 @@ function TableView() {
                     currentPage={pagination.currentPage}
                     onChangePagination={async (pageNumber: number) => {
                         await loadData(null, null, pageNumber)
+                    }}
+                    onChangeItemPerPage={async (itemPerPage: number) => {
+                        await loadData(null, null, null, itemPerPage)
                     }}
                 />
             }
