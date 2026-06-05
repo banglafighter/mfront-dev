@@ -1,5 +1,19 @@
-import {Button, Pagination, Table, TableGenerator, TBody, TD, TFoot, TH, THead, TR, useTableEngine} from "mfront-ui";
+import {
+    Button,
+    Card, CardBody,
+    Pagination,
+    Table,
+    TableGenerator,
+    TBody,
+    TD,
+    TFoot,
+    TH,
+    THead,
+    TR,
+    useTableEngine
+} from "mfront-ui";
 import {type SortDirection, type WebTableGeneratorColumnProps} from "mmcore-ui";
+import type {UINode} from "mmcore";
 
 const invoices = [
   {
@@ -128,6 +142,46 @@ function TableEngineExample() {
     )
 }
 
+function TableEngineCustomRow() {
+    const engine = useTableEngine()
+    engine.registerColumns((columns: WebTableGeneratorColumnProps[]): WebTableGeneratorColumnProps[] => {
+        columns.push(
+            {columnName: "invoice", headerContent: "Invoice", sortable: true},
+            {columnName: "paymentStatus", headerContent: "Payment Status", sortable: true},
+            {columnName: "paymentMethod", headerContent: "Payment Method", sortable: true},
+            {columnName: "totalAmount", headerContent: "Total Amount", sortable: false, columnClassName: "text-right"},
+        )
+        return columns
+    })
+
+    const handleSorting = (sortDirection: SortDirection, columnName: string) => {
+        const sortedData = sortByKey(invoices, columnName, sortDirection as "asc" | "desc");
+        engine.loadData(sortedData);
+    }
+
+    return (
+        <>
+            <Button onClick={()=>{ engine.loadData(invoices)}}>Load Data</Button>
+            <TableGenerator
+                engine={engine}
+                className={"mt-4 mb-4"}
+                onClickSort={handleSorting}
+                isExternalRow={true}
+                externalRowWrapperClassName={"flex flex-col gap-2 pt-2"}
+                renderRow={(row: Record<string, UINode>, dataList: Record<string, UINode>[], columns: WebTableGeneratorColumnProps[], index: number) =>{
+                    return (
+                        <Card className={"rounded-none py-2 border-b-success border-l-success border-r-success"}>
+                            <CardBody className={"px-2"}>
+                                Custom Content
+                            </CardBody>
+                        </Card>
+                    )
+                }}
+            />
+        </>
+    )
+}
+
 export default function ExampleTablePage() {
     return (
         <>
@@ -144,6 +198,7 @@ export default function ExampleTablePage() {
 
                 <TableEngineExample/>
                 <BasicTable/>
+                <TableEngineCustomRow/>
             </div>
         </>
     )
