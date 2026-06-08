@@ -165,6 +165,7 @@ export default function FieldGeneratorInputView() {
             label: "Video",
             colSpan: 12,
             required: true,
+            multiple: true,
             errorText: "Please upload your video",
             mimeType: FileMimeTypes.Video,
             acceptFileExtensions: [".mp4"]
