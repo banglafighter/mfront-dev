@@ -139,6 +139,14 @@ export default function FieldGeneratorInputView() {
             errorText: "Please select country",
         })
 
+        spec.number({
+            name: "age",
+            label: "Age",
+            colSpan: 4,
+            required: true,
+            errorText: "Please enter your age",
+        })
+
         spec.textarea({name: "address", label: "Address", colSpan: 12})
         return spec
     })
