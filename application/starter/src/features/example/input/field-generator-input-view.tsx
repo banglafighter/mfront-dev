@@ -147,6 +147,14 @@ export default function FieldGeneratorInputView() {
             errorText: "Please enter your age",
         })
 
+        spec.file({
+            name: "profile",
+            label: "Profile",
+            colSpan: 12,
+            required: true,
+            errorText: "Please upload your profile picture",
+        })
+
         spec.textarea({name: "address", label: "Address", colSpan: 12})
         return spec
     })
@@ -165,7 +173,7 @@ export default function FieldGeneratorInputView() {
                     <CardSubTitle>Fields are generated from definition</CardSubTitle>
                 </CardHeader>
                 <CardBody>
-                    <FieldGenerator engine={engine} cols={12} gap={3}/>
+                    <FieldGenerator engine={engine} cols={12} gap={4}/>
                 </CardBody>
                 <CardFooter className={"flex justify-end gap-2"}>
                     <Button variant={"outline"} onClick={setErrors}>Set Errors</Button>
