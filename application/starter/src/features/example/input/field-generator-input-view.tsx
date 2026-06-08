@@ -5,10 +5,11 @@ import {
     CardFooter,
     CardHeader,
     CardSubTitle,
-    CardTitle, FieldGenerator,
+    CardTitle,
+    FieldGenerator,
     useFieldEngine
 } from "mfront-ui";
-import {type WebFieldGroupProps, WebFieldSpec} from "mmcore-ui";
+import {FileMimeTypes, type WebFieldGroupProps, WebFieldSpec} from "mmcore-ui";
 import {AtSign, Eye, EyeOff, Phone, Search} from "lucide-react";
 import {type UINode, useRef} from "mfront";
 
@@ -153,6 +154,20 @@ export default function FieldGeneratorInputView() {
             colSpan: 12,
             required: true,
             errorText: "Please upload your profile picture",
+            maxSize: 1024 * 1024 * 5,
+            multiple: true,
+            mimeType: FileMimeTypes.Video,
+            acceptFileExtensions: [".mp4"]
+        })
+
+        spec.file({
+            name: "video",
+            label: "Video",
+            colSpan: 12,
+            required: true,
+            errorText: "Please upload your video",
+            mimeType: FileMimeTypes.Video,
+            acceptFileExtensions: [".mp4"]
         })
 
         spec.textarea({name: "address", label: "Address", colSpan: 12})
