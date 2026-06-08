@@ -151,6 +151,12 @@ export default function FieldGeneratorInputView() {
         return spec
     })
 
+    const setErrors = () => {
+        engine.setFieldErrors({
+            age: "Please enter your age",
+        })
+    }
+
     return (
         <>
             <Card className={"mt-4 mb-4"}>
@@ -162,6 +168,7 @@ export default function FieldGeneratorInputView() {
                     <FieldGenerator engine={engine} cols={12} gap={3}/>
                 </CardBody>
                 <CardFooter className={"flex justify-end gap-2"}>
+                    <Button variant={"outline"} onClick={setErrors}>Set Errors</Button>
                     <Button variant={"outline"}>Cancel</Button>
                     <Button variant={"primary"} onClick={() => {
                         console.log(engine.validateRegisterFields())
