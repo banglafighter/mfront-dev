@@ -1,4 +1,5 @@
 import {
+    Badge,
     Button,
     ButtonGroup,
     Card,
@@ -17,7 +18,7 @@ import {
     LoaderPinwheel,
     Move,
     RefreshCcw,
-    ArrowBigLeft, ArrowBigRight, Ellipsis
+    ArrowBigLeft, ArrowBigRight, Ellipsis, BookmarkIcon, ArrowUpRightIcon
 } from "lucide-react";
 import ExampleUr from "./example-ur";
 import {useAppContext, useRouteNav} from "mfront";
@@ -54,6 +55,46 @@ export default function ExampleAllPage() {
     return (
         <div className={"m-4"}>
 
+            <div className={"flex items-center gap-2 mb-4"}>
+                <Badge>Primary</Badge>
+                <Badge variant={"danger"}>Danger</Badge>
+                <Badge variant={"outline"}>Outline</Badge>
+                <Badge variant={"ghost"}>Ghost</Badge>
+                <Badge variant={"success"}>Success</Badge>
+                <Badge variant={"info"}>Info</Badge>
+                <Badge variant={"warning"}>Warning</Badge>
+                <Badge variant={"secondary"}>Secondary</Badge>
+
+                <Badge variant={"outline"}>
+                    <BookmarkIcon data-icon="inline-end"/>
+                    Bookmark
+                </Badge>
+
+                <Badge asChild>
+                    <a href="#link">
+                        Open Link <ArrowUpRightIcon data-icon="inline-end"/>
+                    </a>
+                </Badge>
+
+            </div>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+                <Badge className="bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300" variant={"primary"}>
+                    Blue
+                </Badge>
+                <Badge className="bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300">
+                    Green
+                </Badge>
+                <Badge className="bg-sky-50 text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+                    Sky
+                </Badge>
+                <Badge className="bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300">
+                    Purple
+                </Badge>
+                <Badge className="bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300">
+                    Red
+                </Badge>
+            </div>
 
             <Button onClick={handleLoading}>
                 Show Loader
