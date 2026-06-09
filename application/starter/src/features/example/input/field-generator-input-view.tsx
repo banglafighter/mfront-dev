@@ -135,26 +135,33 @@ export default function FieldGeneratorInputView() {
             options: countryOptions,
             labelKey: "label",
             valueKey: "value",
-            colSpan: 4,
+            colSpan: 3,
             required: true,
             errorText: "Please select country",
         })
 
+        spec.switch({label: "Switch Input", name: "switchInput", colSpan: 3})
+
         spec.number({
             name: "age",
             label: "Age",
-            colSpan: 4,
+            colSpan: 3,
             required: true,
             errorText: "Please enter your age",
         })
 
+
+        spec.checkbox({label: "Checkbox Input", name: "checkboxInput", colSpan: 12})
+
         spec.date({
             name: "date",
             label: "Date",
-            colSpan: 4,
+            colSpan: 2,
             required: true,
             errorText: "Please select date",
         })
+
+
 
         spec.file({
             name: "profile",
@@ -162,10 +169,10 @@ export default function FieldGeneratorInputView() {
             colSpan: 12,
             required: true,
             errorText: "Please upload your profile picture",
-            maxSize: 1024 * 1024 * 5,
+            // maxSize: 1024 * 1024 * 5,
             multiple: true,
-            mimeType: FileMimeTypes.Video,
-            acceptFileExtensions: [".mp4"]
+            mimeType: FileMimeTypes.Image,
+            acceptFileExtensions: ["jpg", "png", "jpeg"]
         })
 
         spec.file({
@@ -176,7 +183,7 @@ export default function FieldGeneratorInputView() {
             multiple: true,
             errorText: "Please upload your video",
             mimeType: FileMimeTypes.Video,
-            acceptFileExtensions: [".mp4"]
+            acceptFileExtensions: ["mp4"]
         })
 
         spec.textarea({name: "address", label: "Address", colSpan: 12})
@@ -197,7 +204,7 @@ export default function FieldGeneratorInputView() {
                     <CardSubTitle>Fields are generated from definition</CardSubTitle>
                 </CardHeader>
                 <CardBody>
-                    <FieldGenerator engine={engine} cols={12} gap={4}/>
+                    <FieldGenerator engine={engine} cols={12} gap={5}/>
                 </CardBody>
                 <CardFooter className={"flex justify-end gap-2"}>
                     <Button variant={"outline"} onClick={setErrors}>Set Errors</Button>
