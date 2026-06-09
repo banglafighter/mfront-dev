@@ -6,7 +6,7 @@ import {
     CardAction, CardBody, CardFooter,
     CardHeader,
     CardSubTitle,
-    CardTitle,
+    CardTitle, DateTimeField,
     Loader, SelectField,
     Separator,
     toast
@@ -54,6 +54,13 @@ export default function ExampleAllPage() {
 
     return (
         <div className={"m-4"}>
+            <div className={"flex items-center gap-2 mb-4"}>
+                <DateTimeField
+                name={"dateTime"}
+                label={"Date Time"}
+                dateInputType={"single"}
+                />
+            </div>
 
             <div className={"flex items-center gap-2 mb-4"}>
                 <Badge>Primary</Badge>
