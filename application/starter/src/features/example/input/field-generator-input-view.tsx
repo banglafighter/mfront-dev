@@ -148,6 +148,14 @@ export default function FieldGeneratorInputView() {
             errorText: "Please enter your age",
         })
 
+        spec.date({
+            name: "date",
+            label: "Date",
+            colSpan: 4,
+            required: true,
+            errorText: "Please select date",
+        })
+
         spec.file({
             name: "profile",
             label: "Profile",
