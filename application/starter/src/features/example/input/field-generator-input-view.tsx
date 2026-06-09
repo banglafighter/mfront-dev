@@ -63,12 +63,12 @@ export default function FieldGeneratorInputView() {
     }
 
     engine.registerFields((spec: WebFieldSpec) => {
-        spec.text({name: "name", label: "Name", required: true, colSpan: 4, errorText: "Please enter your name"})
+        spec.text({name: "name", label: "Name", required: false, colSpan: 4, errorText: "Please enter your name"})
         spec.text({name: "fatherName", label: "Father name", colSpan: 4})
         spec.text({
             name: "motherName",
             label: "Mother name",
-            required: true,
+            required: false,
             colSpan: 4,
             errorText: "Please enter your mother name",
         })
@@ -76,7 +76,7 @@ export default function FieldGeneratorInputView() {
         spec.text({
             name: "password",
             label: "Custom Password",
-            required: true,
+            required: false,
             colSpan: 4,
             errorText: "Please enter your password",
             endOrBottomItems: getPasswordIcon()
@@ -85,7 +85,7 @@ export default function FieldGeneratorInputView() {
         spec.password({
             name: "systemPassword",
             label: "System Password",
-            required: true,
+            required: false,
             colSpan: 4,
             errorText: "Please enter your password",
         })
@@ -93,7 +93,7 @@ export default function FieldGeneratorInputView() {
         spec.email({
             name: "email",
             label: "Email Address",
-            required: true,
+            required: false,
             colSpan: 4,
             errorText: "Please enter your email",
             startOrTopItems: [
@@ -136,7 +136,7 @@ export default function FieldGeneratorInputView() {
             labelKey: "label",
             valueKey: "value",
             colSpan: 3,
-            required: true,
+            required: false,
             errorText: "Please select country",
         })
 
@@ -146,10 +146,10 @@ export default function FieldGeneratorInputView() {
             name: "age",
             label: "Age",
             colSpan: 3,
-            required: true,
+            required: false,
             errorText: "Please enter your age",
+            step: "any"
         })
-
 
         spec.checkbox({label: "Checkbox Input", name: "checkboxInput", colSpan: 12})
 
@@ -157,7 +157,7 @@ export default function FieldGeneratorInputView() {
             name: "date",
             label: "Date",
             colSpan: 2,
-            required: true,
+            required: false,
             errorText: "Please select date",
         })
 
@@ -167,7 +167,7 @@ export default function FieldGeneratorInputView() {
             name: "profile",
             label: "Profile",
             colSpan: 12,
-            required: true,
+            required: false,
             errorText: "Please upload your profile picture",
             // maxSize: 1024 * 1024 * 5,
             multiple: true,
@@ -179,7 +179,7 @@ export default function FieldGeneratorInputView() {
             name: "video",
             label: "Video",
             colSpan: 12,
-            required: true,
+            required: false,
             multiple: true,
             errorText: "Please upload your video",
             mimeType: FileMimeTypes.Video,
@@ -211,6 +211,7 @@ export default function FieldGeneratorInputView() {
                     <Button variant={"outline"}>Cancel</Button>
                     <Button variant={"primary"} onClick={() => {
                         console.log(engine.validateRegisterFields())
+                        console.log(engine.getFieldValues())
                     }}>Submit</Button>
                 </CardFooter>
             </Card>
