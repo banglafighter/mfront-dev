@@ -14,7 +14,7 @@ import {
 import {CreditCardIcon, OctagonAlert, SettingsIcon, SquarePen, UserIcon} from "lucide-react";
 import ProductDefault from "./assets/images/product-default.png"
 import Wallpaper from "./assets/images/wallpaper.jpg"
-import {_t, activeLanguage, changeLanguage, loadTranslation, useI18n} from "mfront";
+import {_t, activeLanguage, changeLanguage, loadTranslation, useAppContext, useI18n} from "mfront";
 
 const navigation: WebDropdownProps = {
     trigger: <Button variant="outline"><SquarePen/></Button>,
@@ -72,6 +72,9 @@ export const ENGLISH = {
 export default function ExampleComponent() {
     const drawerEngine = useDialogEngine()
     const dialog = useDialogEngine()
+    const startLoading = useAppContext((state) => state.startLoading)
+    const stopLoading = useAppContext((state) => state.stopLoading)
+
 
     const dialogContent = () => {
         return (
@@ -86,6 +89,14 @@ export default function ExampleComponent() {
     if (activeLanguage() === "en") {
         changeToLanguage = "bn"
     }
+
+    dialog.registerProcessor({
+        preload: async (data: any) => {
+            startLoading()
+            await new Promise((resolve) => setTimeout(resolve, 1000))
+            stopLoading()
+        }
+    })
 
     return (
         <>
