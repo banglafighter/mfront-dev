@@ -1,4 +1,5 @@
 import {loadPage, MRoute} from "mfront";
+import ExampleAccordionPage from "./example-accordion-page";
 
 
 const allPage = loadPage(() => import("./example-all-page"))
@@ -9,6 +10,7 @@ const sitePage = loadPage(() => import("./example-site-page"))
 const siteTable = loadPage(() => import("./example-table-page"))
 const calendar = loadPage(() => import("./example-calendar-page"))
 const httpPage = loadPage(() => import("./example-http-page"))
+const accordionPage = loadPage(() => import("./example-accordion-page"))
 
 const UI_BASE_URL = "/example"
 export default class ExampleUr {
@@ -24,6 +26,7 @@ export default class ExampleUr {
         siteTable: `${UI_BASE_URL}/table`,
         calendar: `${UI_BASE_URL}/calendar`,
         httpPage: `${UI_BASE_URL}/http`,
+        accordionPage: `${UI_BASE_URL}/accordion`,
     }
 
     static registerRoute(route: MRoute): void {
@@ -35,5 +38,6 @@ export default class ExampleUr {
         route.addPublicRoute({url: this.ui.siteTable, component: siteTable})
         route.addPublicRoute({url: this.ui.calendar, component: calendar})
         route.addPublicRoute({url: this.ui.httpPage, component: httpPage})
+        route.addPublicRoute({url: this.ui.accordionPage, component: accordionPage})
     }
 }
