@@ -33,10 +33,74 @@ export const countryOptions = [
     {label: "United Arab Emirates", value: "AE"},
 ];
 
+export const extraOptions = [
+    { label: "Afghanistan", value: "AF" },
+    { label: "Argentina", value: "AR" },
+    { label: "Brazil", value: "BR" },
+    { label: "Mexico", value: "MX" },
+    { label: "Italy", value: "IT" },
+    { label: "Spain", value: "ES" },
+    { label: "Netherlands", value: "NL" },
+    { label: "Sweden", value: "SE" },
+    { label: "Norway", value: "NO" },
+    { label: "Denmark", value: "DK" },
+    { label: "Switzerland", value: "CH" },
+    { label: "New Zealand", value: "NZ" },
+    { label: "Singapore", value: "SG" },
+    { label: "Malaysia", value: "MY" },
+    { label: "Indonesia", value: "ID" },
+    { label: "Thailand", value: "TH" },
+    { label: "Vietnam", value: "VN" },
+    { label: "South Africa", value: "ZA" },
+    { label: "Egypt", value: "EG" },
+    { label: "Nigeria", value: "NG" },
+];
+
 export default function ExampleInputAndFormPage() {
     const engine = useFieldEngine()
     return (
         <div className={"m-4"}>
+
+
+            <div className={"mt-4 mb-8 flex flex-col gap-4"}>
+                <SelectField
+                    options={countryOptions}
+                    labelKey={"label"}
+                    valueKey={"value"}
+                    name={"countries"}
+                    label={"Add New Item in Select"}
+                    required={true}
+                    engine={engine}
+
+                    emptyOptionContent={"Add new"}
+                    createNewItem={(searchText: string, setNewOptions: (newOptions: Array<any>) => void) => {
+                        console.log("Create new item with value: ", searchText)
+                        setNewOptions([{label: "Unknown", value: "unknown"}])
+                    }}
+                />
+
+                <SelectField
+                    options={countryOptions}
+                    labelKey={"label"}
+                    valueKey={"value"}
+                    name={"countries"}
+                    label={"Country Lazy Load"}
+                    required={true}
+                    engine={engine}
+
+                    emptyOptionContent={"Item not found"}
+                    loadNewItem={(updateLoader: (isLoading: boolean) => void, setNewOptions: (newOptions: Array<any>) => void) => {
+                        console.log("Called Load New Item");
+                        updateLoader(true)
+                        setTimeout(() => {
+                            console.log("Fired after 2 seconds");
+                            setNewOptions(extraOptions)
+                        }, 2000);
+                    }}
+                />
+            </div>
+
+
 
             <CheckField
                 type={"checkbox"}
