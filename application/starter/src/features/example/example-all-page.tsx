@@ -9,7 +9,7 @@ import {
     CardTitle, DateTimeField, Item, ItemAction, ItemBody, ItemMedia, ItemSubTitle, ItemTitle,
     Loader, SelectField,
     Separator,
-    toast
+    toast, Image
 } from "mfront-ui";
 import {
     ArrowUpIcon,
@@ -91,6 +91,34 @@ function ItemBasicView() {
                     <ChevronRightIcon className="size-4"/>
                 </ItemAction>
             </Item>
+
+            <Item variant={"outline"} className={"w-full"}>
+                <ItemMedia variant={"image"}>
+                    <Image avatar={"medium"} fallback={"TM"} alt={"Profile"} src={"https://avatars.githubusercontent.com/u/1875791?v=4"} />
+                </ItemMedia>
+                <ItemBody>
+                    <ItemTitle>Touhid Mia</ItemTitle>
+                    <ItemSubTitle>Software Engineer</ItemSubTitle>
+                </ItemBody>
+                <ItemAction>
+                    <ChevronRightIcon className="size-4"/>
+                </ItemAction>
+            </Item>
+
+            <Item variant={"outline"} className={"w-full"} size={"sm"}>
+                <ItemMedia variant={"image"}>
+                    <Image avatar={"medium"} fallback={"TM"} alt={"Profile"}
+                           src={"https://avatars.githubusercontent.com/u/1875791?v=4"}/>
+                </ItemMedia>
+                <ItemBody>
+                    <ItemTitle>Touhid Mia</ItemTitle>
+                    <ItemSubTitle>Software Engineer</ItemSubTitle>
+                </ItemBody>
+                <ItemAction>
+                    <ChevronRightIcon className="size-4"/>
+                </ItemAction>
+            </Item>
+
         </div>
     )
 }
