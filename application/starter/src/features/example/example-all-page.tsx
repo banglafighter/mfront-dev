@@ -6,7 +6,7 @@ import {
     CardAction, CardBody, CardFooter,
     CardHeader,
     CardSubTitle,
-    CardTitle, DateTimeField,
+    CardTitle, DateTimeField, Item, ItemAction, ItemBody, ItemMedia, ItemSubTitle, ItemTitle,
     Loader, SelectField,
     Separator,
     toast
@@ -18,7 +18,7 @@ import {
     LoaderPinwheel,
     Move,
     RefreshCcw,
-    ArrowBigLeft, ArrowBigRight, Ellipsis, BookmarkIcon, ArrowUpRightIcon
+    ArrowBigLeft, ArrowBigRight, Ellipsis, BookmarkIcon, ArrowUpRightIcon, BadgeCheckIcon, ChevronRightIcon
 } from "lucide-react";
 import ExampleUr from "./example-ur";
 import {useAppContext, useRouteNav} from "mfront";
@@ -41,6 +41,60 @@ function BasicCard() {
     )
 }
 
+function ItemBasicView() {
+    return (
+        <div className={"flex items-center gap-2 flex-col"}>
+            <Item variant={"outline"} className={"w-full"}>
+                <ItemMedia>
+                    <BadgeCheckIcon className="size-5"/>
+                </ItemMedia>
+                <ItemBody>
+                    <ItemTitle>Your profile has been verified.</ItemTitle>
+                </ItemBody>
+                <ItemAction>
+                    <ChevronRightIcon className="size-4"/>
+                </ItemAction>
+            </Item>
+            <Item variant={"outline"} className={"w-full"} size={"sm"}>
+                <ItemMedia>
+                    <BadgeCheckIcon className="size-5"/>
+                </ItemMedia>
+                <ItemBody>
+                    <ItemTitle>Your profile has been verified.</ItemTitle>
+                    <ItemSubTitle>This is the subtitle</ItemSubTitle>
+                </ItemBody>
+                <ItemAction>
+                    <ChevronRightIcon className="size-4"/>
+                </ItemAction>
+            </Item>
+            <Item variant={"outline"} className={"w-full"}>
+                <ItemMedia>
+                    <BadgeCheckIcon className="size-5"/>
+                </ItemMedia>
+                <ItemBody>
+                    <ItemTitle>Your profile has been verified.</ItemTitle>
+                    <ItemSubTitle>This is the subtitle</ItemSubTitle>
+                </ItemBody>
+                <ItemAction>
+                    <ChevronRightIcon className="size-4"/>
+                </ItemAction>
+            </Item>
+
+            <Item variant={"outline"} className={"w-full"}>
+                <ItemBody>
+                    <ItemTitle>Your profile has been verified.</ItemTitle>
+                    <ItemSubTitle>
+                        Camelcase | Hyphen | Underscore
+                    </ItemSubTitle>
+                </ItemBody>
+                <ItemAction>
+                    <ChevronRightIcon className="size-4"/>
+                </ItemAction>
+            </Item>
+        </div>
+    )
+}
+
 export default function ExampleAllPage() {
     const {navigate} = useRouteNav()
     const startLoading = useAppContext((state) => state.startLoading)
@@ -54,6 +108,12 @@ export default function ExampleAllPage() {
 
     return (
         <div className={"m-4"}>
+
+            <div className={"mb-4 mt-4"}>
+                <ItemBasicView/>
+            </div>
+
+
             <div className={"flex items-center gap-2 mb-4"}>
                 <DateTimeField
                 name={"dateTime"}
